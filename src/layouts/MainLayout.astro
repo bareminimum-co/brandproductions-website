@@ -1,0 +1,42 @@
+---
+import Header from '~/components/Header.astro';
+import Footer from '~/components/Footer.astro';
+
+import '@fontsource-variable/manrope';
+import '~/styles/fonts.css';
+
+const title = 'Brandproductions.ae';
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <meta
+            name="description"
+            content="We help you create a brand that stands out. From creating stunning Websites to managing a social presence, we've got you covered"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <!-- <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        ></script> -->
+    </head>
+    <body>
+        <div class="flex min-h-screen flex-col overflow-x-hidden">
+            <!-- <div id="nav" class="sticky top-0 z-20 max-h-screen bg-black"> -->
+            <Header />
+            <!-- </div> -->
+
+            <main id="main" class="relative z-10 flex flex-1 flex-col">
+                <slot />
+            </main>
+            <Footer />
+        </div>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+---
+import MainLayout from '~/layouts/MainLayout.astro';
+---
+
+<MainLayout>
+    <div class="h-full bg-neutral-100">
+        <section class="py-20 pb-24">
+            <div class="flex-col justify-center items-center flex text-center">
+                <div class="overflow-clip content">
+                    <h1
+                        class="invisible text-8xl leading-none text-neutral-900 font-mona font-semibold"
+                        id="main-heading"
+                    >
+                        <span class="text-brand">About</span> Us
+                    </h1>
+                </div>
+                <div class="overflow-clip content">
+                    <p
+                        class="text-xl text-balance max-w-4xl font-medium text-gray-700 leading-8 invisible mt-4"
+                        id="sub-heading"
+                    >
+                        Founded in 2012, Innovision is a strategic branding and
+                        design agency that champions the biggest ideas and leaps
+                        next level of innovation.
+                    </p>
+                </div>
+
+                <div
+                    class="mt-12 w-[80%] max-w-6xl invisible"
+                    id="banner-image"
+                >
+                    <img
+                        src="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png"
+                        srcset="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=512 512w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=2048 2048w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png 3486w"
+                        class="w-full h-full rounded-3xl bg-neutral-100"
+                    />
+                </div>
+            </div>
+        </section>
+        <section class="py-20 pb-24"></section>
+    </div>
+    <script>
+        import { gsap } from 'gsap';
+        import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const tl = gsap.timeline({
+            defaults: {
+                opacity: 0,
+                ease: 'power3.inOut',
+                autoAlpha: 0,
+            },
+        });
+        tl.from('#main-heading', {
+            y: 180,
+            duration: 1,
+        })
+            .from('#sub-heading', {
+                y: 60,
+                duration: 1,
+                delay: -0.9,
+            })
+            .from('#banner-image', {
+                y: 80,
+                duration: 1,
+                delay: -0.5,
+                ease: 'expo.out',
+            });
+
+        // tl.scrollTrigger({
+
+        // })
+    </script>
+</MainLayout>

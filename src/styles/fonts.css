@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'MonaSans';
+    src: url('/fonts/MonaSansExpanded-Regular.woff2') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MonaSans';
+    src: url('/fonts/MonaSansExpanded-SemiBold.woff2') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
