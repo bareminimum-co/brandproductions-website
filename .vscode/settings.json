@@ -1,0 +1,21 @@
+{
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "class:list"
+    ],
+    "tailwindCSS.experimental.classRegex": [
+        [
+            "(?:classnames|classNames|cx|clsx)\\(([^)]*)\\)",
+            "(?:')((?:\\'|[^'])*)(?:')"
+        ],
+        [
+            "(?:classnames|classNames|cx|clsx)\\(([^)]*)\\)",
+            "(?:\")((?:\\\"|[^\"])*)(?:\")"
+        ],
+        [
+            "(?:classnames|classNames|cx|clsx)\\(([^)]*)\\)",
+            "(?:`)((?:\\`|[^`])*)(?:`)"
+        ]
+    ],
+}
