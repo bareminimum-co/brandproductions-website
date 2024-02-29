@@ -48,6 +48,18 @@ export default {
 					'@apply font-mona text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-none font-semibold':
 						{},
 				},
+				'.heading-4': {
+					'@apply font-mona text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-none font-semibold':
+						{},
+				},
+				'.heading-5': {
+					'@apply font-mona text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-none font-semibold':
+						{},
+				},
+				'.heading-6': {
+					'@apply font-mona text-base sm:text-lg lg:text-xl xl:text-2xl leading-none font-semibold':
+						{},
+				},
 			});
 		}),
 	],
