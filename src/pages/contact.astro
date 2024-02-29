@@ -5,9 +5,7 @@ import ContactForm from '~/components/ContactForm.astro';
 
 <MainLayout>
 	<div class="py-20 pb-24">
-		<div
-			class="flex flex-col justify-start overflow-clip font-mona text-8xl font-semibold leading-none text-neutral-900"
-		>
+		<div class="heading-1 flex flex-col justify-start overflow-clip text-neutral-900">
 			<h1 class="invisible text-center">Get In Touch</h1>
 		</div>
 	</div>
@@ -16,11 +14,11 @@ import ContactForm from '~/components/ContactForm.astro';
 	>
 		<div class="relative flex flex-grow flex-col content-center items-center justify-start px-8">
 			<div
-				class="invisible relative flex w-full max-w-screen-xl content-start items-start justify-start overflow-clip rounded-3xl"
+				class="invisible relative flex w-full max-w-screen-xl flex-col content-start items-start justify-start overflow-clip rounded-3xl lg:flex-row"
 				id="contact-form"
 			>
 				<div
-					class="relative flex max-w-lg flex-col content-start items-start justify-center gap-[4.50rem] self-stretch bg-neutral-900 px-12 py-16"
+					class="relative flex max-w-full flex-col content-start items-start justify-center gap-[4.50rem] self-stretch bg-neutral-900 px-8 py-10 lg:max-w-lg lg:px-12 lg:py-16"
 				>
 					<div class="flex flex-col content-start items-start justify-center gap-[0.63rem]">
 						<div
@@ -74,9 +72,9 @@ import ContactForm from '~/components/ContactForm.astro';
 					</div>
 				</div>
 				<div
-					class="flex flex-grow flex-col content-start items-start justify-center self-stretch bg-neutral-200 p-16"
+					class="flex flex-grow flex-col content-start items-start justify-center self-stretch bg-neutral-200 p-4 lg:p-16"
 				>
-					<div class="w-full rounded-xl bg-neutral-100 p-10">
+					<div class="w-full rounded-xl bg-neutral-100 p-4 lg:p-10">
 						<ContactForm />
 					</div>
 				</div>
