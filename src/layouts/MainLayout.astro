@@ -1,12 +1,14 @@
 ---
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
+import PreFooterCTA from '~/components/PreFooterCTA.astro';
 
 import '@fontsource-variable/manrope';
 import '~/styles/fonts.css';
 import '~/styles/tailwind.css';
 
 const title = 'Brandproductions.ae';
+const { pathname } = Astro.url;
 ---
 
 <!doctype html>
@@ -37,6 +39,7 @@ const title = 'Brandproductions.ae';
 			<main id="main" class="relative z-10 flex flex-1 flex-col">
 				<slot />
 			</main>
+			{pathname !== '/contact' && <PreFooterCTA />}
 			<Footer />
 		</div>
 	</body>
