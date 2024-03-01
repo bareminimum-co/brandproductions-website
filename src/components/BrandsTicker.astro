@@ -1,0 +1,44 @@
+---
+
+---
+
+<section class="flex justify-center bg-neutral-900">
+	<ul
+		class="ticker-container inline-block w-full max-w-screen-xl overflow-clip whitespace-nowrap py-8 text-neutral-100"
+	>
+		<div class="ticker-wrapper inline-block space-x-4">
+			<li class="inline-block">Lorem ipsum dolor sit amet.</li>
+			<li class="inline-block">One two three four</li>
+			<li class="inline-block">alpha bravo charlie delta</li>
+			<li class="inline-block">top news story</li>
+		</div>
+	</ul>
+</section>
+
+<script>
+	import { gsap } from 'gsap';
+
+	// Get the ticker wrapper
+	const tickerWrapper = document.querySelector('.ticker-wrapper');
+
+	// Get the container
+	const container = document.querySelector('.ticker-container');
+
+	// const clone = tickerWrapper.cloneNode(true);
+	// container.innerHTML += container.innerHTML;
+	// container.innerHTML += container.innerHTML;
+
+	// Clone the ticker wrapper as many times as needed
+	// while (false) {
+	// 	const clone = tickerWrapper.cloneNode(true);
+	// 	container.appendChild(clone);
+	// }
+
+	// set the width of the container
+	gsap.to('.ticker-wrapper', {
+		xPercent: -100,
+		duration: 10,
+		ease: 'none',
+		repeat: -1,
+	});
+</script>

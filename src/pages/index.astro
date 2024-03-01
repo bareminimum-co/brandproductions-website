@@ -1,8 +1,31 @@
 ---
 import { Image } from 'astro:assets';
 import MainLayout from '~/layouts/MainLayout.astro';
+import BrandsTicker from '~/components/BrandsTicker.astro';
 ---
 
 <MainLayout>
-    <div>hello world</div>
+	<div class="h-full bg-neutral-100">
+		<!-- banner -->
+		<section class="py-20 pb-24">
+			<div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-2xl xl:px-24">
+				<div class="flex w-full flex-col items-center justify-center gap-6">
+					<div class="self-start">
+						<h1 class="heading-1 text-[10rem] font-normal text-brand">Production</h1>
+					</div>
+					<div class="self-end">
+						<h1 class="heading-1 text-[10rem] font-normal text-neutral-900">Agency</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Brands ticker -->
+		<BrandsTicker />
+		<!-- Our services -->
+		<section class="py-20 pb-24">
+			<div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-2xl xl:px-24">
+				<h1 class="heading-1 text-neutral-900"><span class="text-brand">Our</span> Services</h1>
+			</div>
+		</section>
+	</div>
 </MainLayout>
