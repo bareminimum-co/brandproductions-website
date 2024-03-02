@@ -2,19 +2,89 @@
 import { Image } from 'astro:assets';
 import MainLayout from '~/layouts/MainLayout.astro';
 import BrandsTicker from '~/components/BrandsTicker.astro';
+
+const services = [
+	{
+		title: 'Photography',
+		color: '#FC88C6',
+	},
+	{
+		title: 'Videography',
+		color: '#BF72FD',
+	},
+	{
+		title: 'Design',
+		color: '#8314F9',
+	},
+	{
+		title: 'Photography',
+		color: '#FC88C6',
+	},
+	{
+		title: 'Videography',
+		color: '#BF72FD',
+	},
+	{
+		title: 'Design',
+		color: '#8314F9',
+	},
+	{
+		title: 'Photography',
+		color: '#FC88C6',
+	},
+];
 ---
+
+<style>
+	.b1 {
+		@apply bg-brand;
+		box-shadow: inset -25px -15px 40px rgba(0, 0, 0, 0.3);
+		background-image: linear-gradient(-45deg, rgba(255, 255, 220, 0.3) 0%, transparent 100%);
+	}
+</style>
 
 <MainLayout>
 	<div class="h-full bg-neutral-100">
 		<!-- banner -->
-		<section class="py-20 pb-24">
-			<div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-2xl xl:px-24">
-				<div class="flex w-full flex-col items-center justify-center gap-6">
-					<div class="self-start">
-						<h1 class="heading-1 text-[10rem] font-normal text-brand">Production</h1>
+		<section class="flex min-h-[calc(100svh-200px)] items-center py-20 pb-24">
+			<div
+				class="mx-auto flex w-full max-w-screen-lg items-center px-10 lg:px-14 xl:max-w-screen-2xl xl:px-24"
+			>
+				<div class="relative flex w-full flex-col items-center justify-center gap-6">
+					<div class="flex w-full self-start">
+						<div class="overflow-clip">
+							<h1
+								class="heading-1 invisible font-normal text-brand xl:text-[10rem]"
+								id="banner-title-1"
+							>
+								Production
+							</h1>
+						</div>
+						<div class="relative">
+							<!-- 3d animating circle -->
+
+							<div
+								class="b1 invisible absolute bottom-0 left-16 h-24 w-24 rounded-full xl:h-56 xl:w-56"
+								id="banner-ball"
+							>
+							</div>
+						</div>
 					</div>
-					<div class="self-end">
-						<h1 class="heading-1 text-[10rem] font-normal text-neutral-900">Agency</h1>
+					<div class="flex w-full justify-end">
+						<div class="absolute bottom-0 left-0 max-w-lg overflow-hidden text-lg">
+							<p id="banner-desc" class="invisible">
+								Founded in 2012, Innovision is a strategic branding and design agency that champions
+								the biggest ideas and leaps next level of innovation.
+							</p>
+						</div>
+						<div class="-mb-4 overflow-clip pb-4">
+							<h1
+								class="heading-1 invisible font-normal text-neutral-900 xl:text-[10rem]"
+								id="banner-title-2"
+							>
+								Agency
+							</h1>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -22,10 +92,180 @@ import BrandsTicker from '~/components/BrandsTicker.astro';
 		<!-- Brands ticker -->
 		<BrandsTicker />
 		<!-- Our services -->
-		<section class="py-20 pb-24">
+		<section class="py-20 pb-24" id="services">
 			<div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-2xl xl:px-24">
-				<h1 class="heading-1 text-neutral-900"><span class="text-brand">Our</span> Services</h1>
+				<div class="-mb-4 overflow-clip pb-4">
+					<h1 class="heading-1 invisible text-neutral-900">
+						<span class="text-brand">Our</span> Services
+					</h1>
+				</div>
+				<section class="cards-container pb-[400px] pt-24">
+					<div>
+						<div class="cards">
+							{
+								services.map((service, index) => (
+									<div class="card mb-56 flex h-[650px] w-full flex-col overflow-hidden rounded-3xl bg-slate-50">
+										<div class="heading-4 relative flex w-full items-center gap-4 rounded-t-3xl bg-neutral-900 px-10 py-8 text-slate-50">
+											<span>0{index + 1}</span>
+											<span>{service.title}</span>
+										</div>
+										<div class="relative flex flex-1 flex-col gap-4 px-10 py-8">
+											<div>
+												<img
+													src="https://framerusercontent.com/images/xgYznt8q4kgOHOflcF3AiQQm4.png"
+													srcset="https://framerusercontent.com/images/xgYznt8q4kgOHOflcF3AiQQm4.png?scale-down-to=512 512w, https://framerusercontent.com/images/xgYznt8q4kgOHOflcF3AiQQm4.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/xgYznt8q4kgOHOflcF3AiQQm4.png 1110w"
+													class="h-96 w-[49.94rem] rounded-3xl object-cover"
+												/>
+											</div>
+											<p>
+												Personalize your business with our service! Our experienced team creates
+												unique and functional pieces of furniture that perfectly.
+											</p>
+										</div>
+									</div>
+								))
+							}
+						</div>
+					</div>
+				</section>
+				<div class="py-20">
+					<div class="and-more flex flex-col items-center gap-4">
+						<span class="heading-5 text-neutral-900">And more</span>
+						<a
+							class="whitespace-no-wrap group inline-flex items-center justify-center rounded-full border border-neutral-800 px-6 py-3.5 text-base font-medium leading-6 text-neutral-800 transition-colors duration-300 ease-in-out hover:bg-neutral-900 hover:text-neutral-100 focus:shadow-none focus:outline-none"
+							data-rounded="rounded-md"
+							href={`/services`}
+						>
+							View all services
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								focusable="false"
+								viewBox="0 0 24 24"
+								class="ml-3 inline-block h-5 w-5 transition-transform duration-500 ease-in-out group-hover:-rotate-45 group-hover:transform"
+							>
+								<path
+									d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"
+									fill="currentColor"></path>
+							</svg>
+						</a>
+					</div>
+				</div>
 			</div>
 		</section>
 	</div>
 </MainLayout>
+
+<script>
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	gsap
+		.timeline({
+			defaults: {
+				opacity: 0,
+				ease: 'power3.inOut',
+				autoAlpha: 0,
+			},
+		})
+		// .from('#banner-ball', { zIndex: 10, scale: 30, opacity: 1, duration: 2 }, '-=0.5')
+		.from('#banner-title-1, #banner-title-2', {
+			y: 100,
+			duration: 1,
+			stagger: 0.5,
+			// skewY: 5,
+		})
+		.set(
+			'#banner-ball',
+			{ animation: 'var(--animation-float)', opacity: 1, visibility: 'visible' },
+			'-=0.25',
+		)
+		.from('#banner-desc', { opacity: 0 }, '-=0.5');
+
+	gsap
+		.timeline({
+			scrollTrigger: {
+				trigger: '#services',
+				start: 'top bottom-=300px',
+				// end: '+=100px',
+				// scrub: true,
+				markers: true,
+				// toggleActions: 'restart none none reverse',
+				// invalidateOnRefresh: true,
+			},
+		})
+		.from(
+			'#services h1',
+			{
+				opacity: 0,
+				y: 100,
+				ease: 'power3.inOut',
+				duration: 1,
+				autoAlpha: 0,
+			},
+			// '-=0.5',
+		)
+		.from(
+			'#services .cards-container',
+			{
+				opacity: 0,
+				y: 150,
+				ease: 'expo.inOut',
+				duration: 1,
+			},
+			'<=0.5',
+		);
+
+	const cards = gsap.utils.toArray<Element>('.card');
+	const spacer = 140;
+	const minScale = 0.5;
+
+	// const distributor = gsap.utils.distribute({ base: minScale, amount: 0.2 });
+
+	cards.forEach((card, index) => {
+		// const scaleVal = distributor(index, cards[index], cards);
+
+		const tween = gsap.to(card, {
+			scrollTrigger: {
+				trigger: card,
+				start: `top+=${100} top`,
+				scrub: true,
+				// markers: true,
+				invalidateOnRefresh: true,
+			},
+			// immediateRender: false,
+			ease: 'none',
+			scale: index === cards.length - 1 ? 1 : minScale,
+			opacity: index === cards.length - 1 ? 1 : 0,
+		});
+
+		ScrollTrigger.create({
+			trigger: card,
+			start: `top-=${300} top`,
+			endTrigger: '.cards',
+			end: `bottom top+=${200 + spacer}`,
+			pin: true,
+			pinSpacing: false,
+			// markers: true,
+			id: 'pin',
+			pinType: 'transform',
+			invalidateOnRefresh: true,
+			// immediateRender: false,
+		});
+	});
+
+	gsap.from('.and-more > *', {
+		scrollTrigger: {
+			trigger: '.and-more',
+			start: 'top bottom',
+			pinType: 'transform',
+			// invalidateOnRefresh: true,
+		},
+		opacity: 0,
+		y: 20,
+		stagger: 0.5,
+		ease: 'power3.inOut',
+		duration: 1,
+	});
+</script>
