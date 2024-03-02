@@ -7,8 +7,13 @@ import '@fontsource-variable/manrope';
 import '~/styles/fonts.css';
 import '~/styles/tailwind.css';
 
+interface Props {
+	hidePreFooter?: boolean;
+	headerClass?: string;
+}
+
 const title = 'Brandproductions.ae';
-const { pathname } = Astro.url;
+const { hidePreFooter = false, headerClass } = Astro.props;
 ---
 
 <!doctype html>
@@ -33,13 +38,14 @@ const { pathname } = Astro.url;
 	<body>
 		<div class="flex min-h-screen flex-col overflow-x-hidden">
 			<!-- <div id="nav" class="sticky top-0 z-20 max-h-screen bg-black"> -->
-			<Header />
+
+			<Header class:list={[headerClass]} />
 			<!-- </div> -->
 
 			<main id="main" class="relative z-10 flex flex-1 flex-col">
 				<slot />
 			</main>
-			{pathname !== '/contact' && <PreFooterCTA />}
+			{!hidePreFooter && <PreFooterCTA />}
 			<Footer />
 		</div>
 	</body>
@@ -50,7 +56,6 @@ const { pathname } = Astro.url;
 
 	const lenis = new Lenis({
 		duration: 1.2,
-		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 	});
 
 	function raf(time) {

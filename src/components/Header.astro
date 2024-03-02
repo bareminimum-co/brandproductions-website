@@ -1,13 +1,18 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 import { Image } from 'astro:assets';
-const { pathname } = Astro.url;
+
+export type Props = HTMLAttributes<'nav'>;
+
+const { class: className, ...attrs } = Astro.props;
 ---
 
 <nav
 	class:list={[
 		'relative flex h-min content-center items-center justify-center overflow-visible bg-neutral-100 py-8 text-xs',
-		{ 'bg-white': pathname === '/contact' },
+		className,
 	]}
+	{...attrs}
 >
 	<div class="relative h-auto w-[88%]">
 		<div class="relative flex content-center items-center justify-between">
