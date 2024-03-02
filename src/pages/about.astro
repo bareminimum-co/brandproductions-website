@@ -1,5 +1,6 @@
 ---
 import MainLayout from '~/layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
 ---
 
 <MainLayout>
@@ -23,11 +24,20 @@ import MainLayout from '~/layouts/MainLayout.astro';
 				</div>
 
 				<div class="invisible mt-12 w-[90%] max-w-3xl lg:w-[80%] xl:max-w-6xl" id="banner-image">
-					<img
+					<Image
+						src={'https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png'}
+						srcset="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=512 512w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=2048 2048w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png 3486w"
+						class="h-full w-full rounded-3xl bg-neutral-100"
+						width={126}
+						height={40}
+						alt="Brand Productions"
+						loading="eager"
+					/>
+					<!-- <img
 						src="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png"
 						srcset="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=512 512w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=2048 2048w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png 3486w"
 						class="h-full w-full rounded-3xl bg-neutral-100"
-					/>
+					/> -->
 				</div>
 			</div>
 		</section>
@@ -98,14 +108,10 @@ import MainLayout from '~/layouts/MainLayout.astro';
 			},
 		});
 		tl.from('#main-heading', {
-			y: 180,
-			duration: 1,
+			y: 60,
+			duration: 0.5,
 		})
-			.from('#sub-heading', {
-				y: 60,
-				duration: 1,
-				delay: -0.9,
-			})
+			.from('#sub-heading', { y: 100, duration: 1 }, '-=0.75')
 			.from('#banner-image', {
 				y: 80,
 				duration: 1,

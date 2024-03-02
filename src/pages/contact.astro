@@ -95,14 +95,16 @@ import ContactForm from '~/components/ContactForm.astro';
 			},
 		});
 		tl.from('h1', {
-			y: 180,
-			duration: 1,
-			skewY: 7,
-		}).from('#contact-form', {
-			y: 50,
-			duration: 1,
-			ease: 'expo.out',
-			delay: -0.2,
-		});
+			y: 60,
+			duration: 0.5,
+		}).from(
+			'#contact-form',
+			{
+				y: 80,
+				duration: 1,
+				ease: 'expo.out',
+			},
+			'<0.25',
+		);
 	</script>
 </MainLayout>
