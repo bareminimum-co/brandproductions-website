@@ -8,7 +8,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Manrope Variable', ...defaultTheme.fontFamily.sans],
-				mona: ['MonaSans', ...defaultTheme.fontFamily.mono],
+				mona: ['MonaSans', ...defaultTheme.fontFamily.sans],
 			},
 			animation: {
 				float: 'float 6s ease-in-out infinite',
