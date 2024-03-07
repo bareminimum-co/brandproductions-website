@@ -7,10 +7,13 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "sync": "astro sync",
     "astro": "astro"
   },
   "dependencies": {
+    "@alpinejs/focus": "^3.13.6",
     "@astrojs/alpinejs": "^0.4.0",
+    "@astrojs/mdx": "^2.1.1",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/manrope": "^5.0.18",
     "@studio-freight/lenis": "^1.0.39",

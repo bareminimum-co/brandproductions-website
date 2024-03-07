@@ -1,0 +1,23 @@
+---
+title: "Astro 2.0"
+
+---
+
+import Test from '~/content/works/_data/emar/test.png';
+import { Image } from 'astro:assets';
+import { getImage } from "astro:assets";
+import { paths } from './_data/emar/data.ts';
+import ImageGallery from '~/components/ImageGallery.astro';
+
+export const authors = [
+	{ name: 'Jane', email: 'hi@jane.com' },
+	{ name: 'John', twitter: '@john2002' },
+];
+
+export const optimizedBackground = await getImage({ src: Test, format: 'webp' })
+
+
+
+{paths.map(author => (<img src={optimizedBackground.src} alt="Test" width={500} height={500} />))}
+
+<ImageGallery />

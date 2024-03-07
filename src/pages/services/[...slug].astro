@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import MainLayout from '~/layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+	const serviceEntries = await getCollection('services');
+	return serviceEntries.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<MainLayout>
+	<div class="h-full bg-neutral-100">
+		<!-- banner -->
+		<section class="py-20 pb-24">
+			<div class="flex flex-col items-center justify-center text-center">
+				<div class="content -mb-4 overflow-clip pb-4">
+					<h1 class="heading-1 text-neutral-900" id="main-heading">
+						{entry.data.title}
+					</h1>
+				</div>
+
+				<div class="mt-12 w-[90%] max-w-3xl lg:w-[80%] xl:max-w-6xl" id="banner-image">
+					<Image
+						src={entry.data.image.src}
+						class="h-full w-full rounded-3xl bg-neutral-100"
+						width={126}
+						height={40}
+						alt={entry.data.image.alt}
+						loading="eager"
+					/>
+				</div>
+			</div>
+		</section>
+		<section class="pb-24">
+			<div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-lg xl:px-24">
+				<Content />
+			</div>
+		</section>
+	</div>
+</MainLayout>
