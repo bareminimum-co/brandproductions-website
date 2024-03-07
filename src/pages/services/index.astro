@@ -1,7 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import src from 'gsap/src';
+import StaticImage from '~/components/StaticImage.astro';
 import MainLayout from '~/layouts/MainLayout.astro';
 
-import servicesData from '~/data/services.json';
+const allServices = await getCollection('services');
 ---
 
 <MainLayout>
@@ -16,23 +20,23 @@ import servicesData from '~/data/services.json';
 			class="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-10 pb-48 lg:px-14 xl:grid-cols-2 xl:px-24"
 		>
 			{
-				servicesData.map((service, index) => (
+				allServices.map((service, index) => (
 					<div class="flex flex-col items-center rounded-3xl bg-neutral-200 p-8">
-						<div class="flex h-auto w-full items-center justify-center rounded-full bg-brand">
-							<img
-								src="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png"
-								srcset="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=512 512w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=2048 2048w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png 3486w"
-								class="h-full w-full rounded-3xl bg-neutral-100"
+						<div class="flex h-auto w-full items-center justify-center rounded-full">
+							<Image
+								src={service.data.cover}
+								alt={service.data.coverAlt}
+								class="h-full w-full rounded-xl bg-neutral-100"
 							/>
 						</div>
-						<div class="mt-12 flex flex-col gap-4">
-							<h2 class="heading-4 text-neutral-900">{service.title}</h2>
-							<p class="text-neutral-600">{service.description}</p>
+						<div class="mt-12 flex w-full flex-col items-start gap-4">
+							<h2 class="heading-4 text-neutral-900">{service.data.title}</h2>
+							<p class="text-neutral-600">{service.data.description}</p>
 							<div class="self-end">
 								<a
 									class="whitespace-no-wrap group inline-flex items-center justify-center rounded-full border border-neutral-800 px-6 py-3.5 text-base font-medium leading-6 text-neutral-800 transition-colors duration-300 ease-in-out hover:bg-neutral-900 hover:text-neutral-100 focus:shadow-none focus:outline-none"
 									data-rounded="rounded-md"
-									href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}
+									href={`/services/${service.slug}`}
 								>
 									Learn More
 									<svg

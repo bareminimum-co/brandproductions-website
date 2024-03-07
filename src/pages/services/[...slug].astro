@@ -28,11 +28,11 @@ const { Content } = await entry.render();
 
 				<div class="mt-12 w-[90%] max-w-3xl lg:w-[80%] xl:max-w-6xl" id="banner-image">
 					<Image
-						src={entry.data.image.src}
+						src={entry.data.cover}
 						class="h-full w-full rounded-3xl bg-neutral-100"
-						width={126}
-						height={40}
-						alt={entry.data.image.alt}
+						width={1152}
+						height={650}
+						alt={entry.data.coverAlt}
 						loading="eager"
 					/>
 				</div>
@@ -40,7 +40,9 @@ const { Content } = await entry.render();
 		</section>
 		<section class="pb-24">
 			<div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-lg xl:px-24">
-				<Content />
+				<article class="prose">
+					<Content />
+				</article>
 			</div>
 		</section>
 	</div>

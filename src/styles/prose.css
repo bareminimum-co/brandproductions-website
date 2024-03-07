@@ -1,0 +1,77 @@
+@layer components {
+	.prose {
+		@apply mx-auto w-full max-w-prose tracking-wide text-neutral-900 lg:text-lg;
+		line-height: 1.75em;
+	}
+
+	.prose > p {
+		@apply my-4;
+	}
+
+	.prose > hr {
+		@apply my-8 border-neutral-500;
+	}
+
+	.prose > h2 {
+		@apply heading-2 mb-8 mt-10;
+	}
+
+	.prose > h3 {
+		@apply heading-3 mb-8 mt-10;
+	}
+
+	.prose > h4 {
+		@apply heading-4 mb-8 mt-10;
+	}
+
+	.prose > img {
+		@apply my-4;
+	}
+
+	.prose strong {
+		@apply font-medium text-white;
+	}
+
+	.prose ul {
+		@apply my-4 pl-8;
+	}
+
+	/* the ::marker selector doesn't allow customizing the spacing around the marker as easily */
+	.prose ul li::before {
+		content: '';
+		/* background: url('../icons/star.svg') center no-repeat; */
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		margin-right: 8px;
+		margin-left: -18px;
+	}
+
+	.prose ol {
+		@apply my-4 list-inside list-decimal pl-4;
+	}
+	.prose ol ::marker {
+		@apply inline-block font-bold text-neutral-500;
+	}
+
+	.prose li {
+		@apply my-2;
+	}
+
+	.prose :where(a) {
+		@apply font-bold text-brand underline underline-offset-2 hover:no-underline;
+	}
+
+	.prose > p code {
+		@apply mx-0.5 inline-block rounded-lg bg-neutral-500 px-2 align-baseline text-sm leading-6 text-neutral-100;
+	}
+
+	.prose > p a > code {
+		@apply text-inherit;
+		text-decoration: inherit;
+	}
+
+	.prose > .expressive-code pre {
+		@apply my-6 rounded-md border border-neutral-400;
+	}
+}

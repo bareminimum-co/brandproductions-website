@@ -1,0 +1,22 @@
+---
+import { Image, getImage } from 'astro:assets';
+import { resolveImage } from '~/content/services/_resolveImage.js';
+
+const { src, alt, class: imageClass } = Astro.props;
+
+const image = await resolveImage(src);
+---
+
+{
+	image && (
+		<img
+			src={src}
+			width={image.width}
+			height={image.height}
+			alt={alt}
+			class:list={imageClass}
+			loading="lazy"
+			decoding="async"
+		/>
+	)
+}

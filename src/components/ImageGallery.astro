@@ -1,55 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import type { GalleryImageData } from '../content/works/_data/emar';
 interface Props {
-	images?: Array<{
-		photo: string;
-		alt: string;
-	}>;
+	images?: GalleryImageData[];
 }
 
-const {
-	images = [
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-01.jpeg',
-			alt: 'Photo of Mountains',
-		},
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-02.jpeg',
-			alt: 'Photo of Mountains 02',
-		},
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-03.jpeg',
-			alt: 'Photo of Mountains 03',
-		},
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-04.jpeg',
-			alt: 'Photo of Mountains 04',
-		},
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-05.jpeg',
-			alt: 'Photo of Mountains 05',
-		},
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-06.jpeg',
-			alt: 'Photo of Mountains 06',
-		},
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-07.jpeg',
-			alt: 'Photo of Mountains 07',
-		},
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-08.jpeg',
-			alt: 'Photo of Mountains 08',
-		},
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-09.jpeg',
-			alt: 'Photo of Mountains 09',
-		},
-		{
-			photo: 'https://cdn.devdojo.com/images/june2023/mountains-10.jpeg',
-			alt: 'Photo of Mountains 10',
-		},
-	],
-} = Astro.props;
+const { images = [] } = Astro.props;
 ---
 
 <div
@@ -65,13 +21,16 @@ const {
 		style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"
 	>
 		<ul x-ref="gallery" id="gallery" class="grid grid-cols-2 gap-5 lg:grid-cols-2">
-			<template x-for="(image, index) in imageGallery">
+			<template x-for="(data, index) in imageGallery">
 				<li>
 					<img
 						x-on:click="imageGalleryOpen"
-						:src="image.photo"
-						:alt="image.alt"
+						:src="data.image.src"
+						:alt="data.alt"
 						:data-index="index+1"
+						loading="lazy"
+						:width="data.image.width"
+						:height="data.image.height"
 						class="aspect-[5/6] h-auto w-full cursor-zoom-in select-none rounded-2xl bg-gray-200 object-cover lg:aspect-[2/3] xl:aspect-[4/4]"
 					/>
 				</li>
