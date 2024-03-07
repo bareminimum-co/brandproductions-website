@@ -7,6 +7,7 @@ export interface GalleryImageData {
 	image: ImageMetadata;
 	alt: string;
 	title: string;
+	className?: string;
 }
 
 export const data: GalleryImageData[] = [

@@ -17,11 +17,15 @@ const { images = [] } = Astro.props;
 	@keyup.left.window="imageGalleryPrev();"
 >
 	<div
-		class="ease animate-fade-in-view mx-auto max-w-6xl select-none opacity-0 delay-300 duration-1000"
+		class="ease animate-fade-in-view mx-auto select-none opacity-0 delay-300 duration-1000"
 		style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"
 	>
-		<ul x-ref="gallery" id="gallery" class="grid grid-cols-2 gap-5 lg:grid-cols-2">
-			<template x-for="(data, index) in imageGallery">
+		<ul
+			x-ref="gallery"
+			id="gallery"
+			class="grid grid-cols-2 gap-5 [grid-auto-col:1fr] lg:grid-cols-3"
+		>
+			<!-- <template x-for="(data, index) in imageGallery">
 				<li>
 					<img
 						x-on:click="imageGalleryOpen"
@@ -34,7 +38,28 @@ const { images = [] } = Astro.props;
 						class="aspect-[5/6] h-auto w-full cursor-zoom-in select-none rounded-2xl bg-gray-200 object-cover lg:aspect-[2/3] xl:aspect-[4/4]"
 					/>
 				</li>
-			</template>
+			</template> -->
+			<!-- <template> -->
+			{
+				images.map((data, index) => (
+					<li class:list={['col-span-1', data.className]}>
+						<Image
+							x-on:click="imageGalleryOpen"
+							src={data.image}
+							alt={data.alt}
+							data-index={index + 1}
+							loading="lazy"
+							width={data.image.width}
+							height={data.image.height}
+							class:list={[
+								'aspect-[5/6] h-auto w-full cursor-zoom-in select-none rounded-2xl bg-gray-200 object-cover lg:aspect-[2/3] xl:aspect-[4/4]',
+								data.className,
+							]}
+						/>
+					</li>
+				))
+			}
+			<!-- </template> -->
 		</ul>
 	</div>
 	<template x-teleport="body">
