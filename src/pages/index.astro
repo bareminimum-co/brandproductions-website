@@ -215,7 +215,7 @@ const services = [
 		})
 		.from(
 			'#banner-ball',
-			{ zIndex: 10, scale: 30, opacity: 1, duration: 2, backgroundColor: 'white' },
+			{ zIndex: 10, scale: 15, opacity: 1, duration: 2, backgroundColor: 'white' },
 			'-=0.5',
 		)
 		.to('#banner-ball', { y: 50, opacity: 1, duration: 1, visibility: 'visible' }, '<')
@@ -225,7 +225,7 @@ const services = [
 			stagger: 0.5,
 			// skewY: 5,
 		})
-		.to('#banner-ball', { y: -60, duration: 1, opacity: 1, visibility: 'visible' }, '<0.8')
+		.to('#banner-ball', { y: -50, duration: 1, opacity: 1, visibility: 'visible' }, '<0.8')
 		.to('#banner-ball', { y: 0, duration: 1.2, opacity: 1, visibility: 'visible' }, '<0.85')
 		.set(
 			'#banner-ball',
@@ -261,11 +261,10 @@ const services = [
 			'#services .cards-container',
 			{
 				opacity: 0,
-				y: 150,
 				ease: 'expo.inOut',
 				duration: 1,
 			},
-			'<=0.5',
+			'<=0.1',
 		);
 
 	const cards = gsap.utils.toArray<Element>('.card');
@@ -293,14 +292,14 @@ const services = [
 
 		ScrollTrigger.create({
 			trigger: card,
-			start: `top-=${250} top`,
+			start: `top-=${150} top`,
 			endTrigger: '.cards',
 			end: `bottom top+=${200 + spacer}`,
 			pin: true,
 			pinSpacing: false,
 			// markers: true,
 			id: 'pin',
-			pinType: 'transform',
+			// pinType: 'transform',
 			invalidateOnRefresh: true,
 			// immediateRender: false,
 		});
@@ -310,7 +309,7 @@ const services = [
 		scrollTrigger: {
 			trigger: '.and-more',
 			start: 'top bottom',
-			pinType: 'transform',
+			// pinType: 'transform',
 			// invalidateOnRefresh: true,
 		},
 		opacity: 0,
