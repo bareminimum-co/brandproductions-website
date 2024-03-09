@@ -1,16 +1,129 @@
 ---
+import { Image } from 'astro:assets';
+import Rakez from '~/assets/brands/rakez.png';
+import RakIcc from '~/assets/brands/rak-icc.png';
+import RHolding from '~/assets/brands/r-holding.png';
+import RasAlKahimah from '~/assets/brands/ras-al-khaimah.png';
+import Reebok from '~/assets/brands/reebok.png';
+import RitzCarlton from '~/assets/brands/ritz-carlton.png';
+import Rockport from '~/assets/brands/rockport.png';
+import RoveHotels from '~/assets/brands/rove-hotels.png';
+import Roxy from '~/assets/brands/roxy.png';
+import Sabis from '~/assets/brands/sabis.png';
+import Speedo from '~/assets/brands/speedo.png';
 
+const brands = [
+	{
+		name: 'Rakez',
+		logo: Rakez,
+	},
+	{
+		name: 'RAK International corporate centre',
+		logo: RakIcc,
+	},
+	{
+		name: 'R Holding',
+		logo: RHolding,
+	},
+	{
+		name: 'Amazon',
+		logo: RasAlKahimah,
+	},
+	{
+		name: 'Reebok',
+		logo: Reebok,
+		class: 'opacity-50',
+	},
+	{
+		name: 'Ritz Carlton',
+		logo: RitzCarlton,
+	},
+	{
+		name: 'Rockport',
+		logo: Rockport,
+	},
+	{
+		name: 'Rove Hotels',
+		logo: RoveHotels,
+	},
+	{
+		name: 'Roxy',
+		logo: Roxy,
+	},
+	{
+		name: 'Sabis',
+		logo: Sabis,
+	},
+	{
+		name: 'Speedo',
+		logo: Speedo,
+	},
+	// add more brands here
+	{
+		name: 'Rakez',
+		logo: Rakez,
+	},
+	{
+		name: 'RAK International corporate centre',
+		logo: RakIcc,
+	},
+	{
+		name: 'R Holding',
+		logo: RHolding,
+	},
+	{
+		name: 'Amazon',
+		logo: RasAlKahimah,
+	},
+	{
+		name: 'Reebok',
+		logo: Reebok,
+	},
+	{
+		name: 'Ritz Carlton',
+		logo: RitzCarlton,
+	},
+	{
+		name: 'Rockport',
+		logo: Rockport,
+	},
+	{
+		name: 'Rove Hotels',
+		logo: RoveHotels,
+	},
+	{
+		name: 'Roxy',
+		logo: Roxy,
+	},
+	{
+		name: 'Sabis',
+		logo: Sabis,
+	},
+	{
+		name: 'Speedo',
+		logo: Speedo,
+	},
+];
 ---
 
-<section class="flex justify-center bg-neutral-900">
+<section class="flex justify-center bg-neutral-100">
 	<ul
-		class="ticker-container inline-block w-full max-w-screen-xl overflow-clip whitespace-nowrap py-8 text-neutral-100"
+		class="ticker-container inline-block w-full overflow-clip whitespace-nowrap py-6 text-neutral-100"
 	>
 		<div class="ticker-wrapper inline-block space-x-4">
-			<li class="inline-block">Lorem ipsum dolor sit amet.</li>
-			<li class="inline-block">One two three four</li>
-			<li class="inline-block">alpha bravo charlie delta</li>
-			<li class="inline-block">top news story</li>
+			{
+				brands.map((brand, index) => (
+					<li class="inline-block" title={brand.name}>
+						<Image
+							src={brand.logo}
+							alt={brand.name}
+							class:list={['h-12 w-auto opacity-80 [filter:grayscale(1)]', brand?.class]}
+							width={100}
+							height={100}
+						/>
+					</li>
+				))
+			}
 		</div>
 	</ul>
 </section>
@@ -20,25 +133,25 @@
 
 	// Get the ticker wrapper
 	const tickerWrapper = document.querySelector('.ticker-wrapper');
-
 	// Get the container
 	const container = document.querySelector('.ticker-container');
+	if (tickerWrapper && container) {
+		const clone = tickerWrapper.cloneNode(true);
+		container.innerHTML += container.innerHTML;
+		// container.innerHTML += container.innerHTML;
 
-	// const clone = tickerWrapper.cloneNode(true);
-	// container.innerHTML += container.innerHTML;
-	// container.innerHTML += container.innerHTML;
+		// Clone the ticker wrapper as many times as needed
+		// while (false) {
+		// 	const clone = tickerWrapper.cloneNode(true);
+		// 	container.appendChild(clone);
+		// }
 
-	// Clone the ticker wrapper as many times as needed
-	// while (false) {
-	// 	const clone = tickerWrapper.cloneNode(true);
-	// 	container.appendChild(clone);
-	// }
-
-	// set the width of the container
-	gsap.to('.ticker-wrapper', {
-		xPercent: -100,
-		duration: 10,
-		ease: 'none',
-		repeat: -1,
-	});
+		// set the width of the container
+		// gsap.to('.ticker-wrapper', {
+		// 	xPercent: -100,
+		// 	duration: 10,
+		// 	ease: 'none',
+		// 	repeat: -1,
+		// });
+	}
 </script>
