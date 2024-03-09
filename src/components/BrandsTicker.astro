@@ -133,23 +133,13 @@ const brands = [
 
 	// Get the ticker wrapper
 	const tickerWrapper = document.querySelector('.ticker-wrapper');
-	// Get the container
-	const container = document.querySelector('.ticker-container');
-	if (tickerWrapper && container) {
-		// const clone = tickerWrapper.cloneNode(true);
-		// container.innerHTML += container.innerHTML;
+	if (tickerWrapper) {
 		tickerWrapper.innerHTML += tickerWrapper.innerHTML;
-
-		// Clone the ticker wrapper as many times as needed
-		// while (false) {
-		// 	const clone = tickerWrapper.cloneNode(true);
-		// 	container.appendChild(clone);
-		// }
 
 		// set the width of the container
 		gsap.to('.ticker-wrapper', {
 			xPercent: -100,
-			duration: 20,
+			duration: 25,
 			ease: 'none',
 			repeat: -1,
 		});
