@@ -32,7 +32,7 @@ const brands = [
 	{
 		name: 'Reebok',
 		logo: Reebok,
-		class: 'opacity-50',
+		class: '!opacity-50',
 	},
 	{
 		name: 'Ritz Carlton',
@@ -136,9 +136,9 @@ const brands = [
 	// Get the container
 	const container = document.querySelector('.ticker-container');
 	if (tickerWrapper && container) {
-		const clone = tickerWrapper.cloneNode(true);
-		container.innerHTML += container.innerHTML;
+		// const clone = tickerWrapper.cloneNode(true);
 		// container.innerHTML += container.innerHTML;
+		tickerWrapper.innerHTML += tickerWrapper.innerHTML;
 
 		// Clone the ticker wrapper as many times as needed
 		// while (false) {
@@ -147,11 +147,11 @@ const brands = [
 		// }
 
 		// set the width of the container
-		// gsap.to('.ticker-wrapper', {
-		// 	xPercent: -100,
-		// 	duration: 10,
-		// 	ease: 'none',
-		// 	repeat: -1,
-		// });
+		gsap.to('.ticker-wrapper', {
+			xPercent: -100,
+			duration: 20,
+			ease: 'none',
+			repeat: -1,
+		});
 	}
 </script>
