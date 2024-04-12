@@ -62,7 +62,7 @@ const allWorks = await getCollection('works');
 							<Image
 								src={service.data.cover}
 								alt={service.data.coverAlt}
-								class="h-full w-full rounded-xl bg-neutral-100"
+								class="aspect-video h-full w-full rounded-xl bg-neutral-100 object-cover object-center"
 							/>
 						</div>
 						<div class="mt-12 flex w-full flex-col items-start gap-4">
