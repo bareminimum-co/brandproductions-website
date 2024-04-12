@@ -1,7 +1,7 @@
 ---
 title: Branding
-description: "Creative, Strategic, Effective, a remarkable blend that will take your image to the next level."
-cover: "./_images/emar-1.png"
+description: "Branding creates a unique identity for businesses, building trust, loyalty, and recognition among consumers."
+cover: "./_images/brandingcover.png"
 coverAlt: "The word astro against an illustration of planets and stars."
 ---
 

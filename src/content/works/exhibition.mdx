@@ -1,0 +1,96 @@
+---
+title: "Exhibition"
+description: "Creative, Strategic, Effective, a remarkable blend that will take your image to the next level."
+cover: "./_images/event/WV-5.jpg"
+coverAlt: "The word astro against an illustration of planets and stars."
+---
+
+import { Image } from 'astro:assets';
+import { getImage } from "astro:assets";
+import ImageGallery from '~/components/ImageGallery.astro';
+
+
+import Emar1 from './_images/event/WV-1.jpg';
+import Emar2 from './_images/event/WV-2.jpg';
+import Emar3 from './_images/event/WV-3.jpg';
+import Emar4 from './_images/event/WV-4.jpg';
+import Emar5 from './_images/event/WV-5.jpg';
+import Emar6 from './_images/event/WV-6.jpg';
+import Emar7 from './_images/event/WV-7.jpg';
+import Emar8 from './_images/event/WV-8.jpg';
+import Emar9 from './_images/event/WV-9.jpg';
+import Emar10 from './_images/event/WV-10.jpg';
+import Emar11 from './_images/event/Rove-4.jpg';
+import Emar12 from './_images/event/Sxmas-1.jpg';
+
+
+export const data = [
+    {
+        image: Emar1,
+        alt: 'Emar 1',
+        title: 'Emar 1',
+        description: 'A graphic design project for a client in the real estate industry.',
+    },
+    {
+        image: Emar2,
+        alt: 'Emar 2',
+        title: 'Ferrari',
+        description: 'A captivating and exciting project for a client in the automotive industry.',
+    },
+    {
+        image: Emar3,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: Emar4,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+        // className: 'col-span-2 aspect-w-16 aspect-h-9',
+    },
+    {
+        image: Emar5,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: Emar6,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: Emar7,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: Emar8,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+
+        image: Emar9,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+
+        image: Emar10,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+
+    {
+        image: Emar11,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: Emar12,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+
+
+
+];
+
+
+<ImageGallery images={data} />

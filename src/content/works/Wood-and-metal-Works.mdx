@@ -1,0 +1,82 @@
+---
+title: "Wood And Metal Works"
+description: "Creative, Strategic, Effective, a remarkable blend that will take your image to the next level."
+cover: "./_images/wood-and-metal-works/wm-8.jpg"
+coverAlt: "Industry leading metal and woods works for any reqiurement our craftsmen are ready to deliver"
+---
+
+import { Image } from 'astro:assets';
+import { getImage } from "astro:assets";
+import ImageGallery from '~/components/ImageGallery.astro';
+
+
+import wm from './_images/wood-and-metal-works/wm-1.jpg';
+import wm1 from './_images/wood-and-metal-works/wm-2.png';
+import wm2 from './_images/wood-and-metal-works/wm-3.jpg';
+import wm3 from './_images/wood-and-metal-works/wm-4.jpg';
+import wm4 from './_images/wood-and-metal-works/wm-5.jpg';
+import wm5 from './_images/wood-and-metal-works/wm-6.jpg';
+import wm6 from './_images/wood-and-metal-works/wm-7.jpg';
+import wm7 from './_images/wood-and-metal-works/wm-8.jpg';
+import wm8 from './_images/wood-and-metal-works/wm-9.jpg';
+
+export const data = [
+    {
+        image: wm,
+        alt: 'Emar 1',
+        title: 'Emar 1',
+        description: 'A graphic design project for a client in the real estate industry.',
+    },
+    {
+        image: wm1,
+        alt: 'wm 1',
+        title: 'Ferrari',
+        description: 'A captivating and exciting project for a client in the automotive industry.',
+    },
+    {
+        image: wm2,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: wm3,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+        // className: 'col-span-2 aspect-w-16 aspect-h-9',
+    },
+    {
+        image: wm4,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: wm5,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: wm6,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: wm7,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: wm8,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: wm8,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+
+
+];
+
+
+<ImageGallery images={data} />

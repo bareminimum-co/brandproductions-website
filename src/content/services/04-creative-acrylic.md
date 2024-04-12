@@ -1,7 +1,7 @@
 ---
 title: Creative Acrylic
 description: "Create your world of imagination. Formulate reality out of your vision. "
-cover: "./_images/emar-1.png"
+cover: "./_images/signage 2.png"
 coverAlt: "The word astro against an illustration of planets and stars."
 ---
 

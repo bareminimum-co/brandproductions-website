@@ -74,9 +74,10 @@ const services = [
 					<div class="flex w-full justify-end">
 						<div class="absolute bottom-0 left-0 max-w-[30rem] overflow-hidden text-lg">
 							<p id="banner-desc" class="invisible">
-								We are experts in the field of Signage, Outdoor Advertising, In-Store Branding, and
-								Retail Displays. Our comprehensive branding solutions provide a unified and
-								impactful brand presence across multiple channels.
+								We are experts in the field of Signage, Outdoor Advertising,
+								In-Store Branding, and Retail Displays. Our comprehensive branding
+								solutions provide a unified and impactful brand presence across
+								multiple channels.
 							</p>
 						</div>
 						<div class="-mb-4 overflow-clip pb-4">
@@ -141,9 +142,11 @@ const services = [
 											<div class="grid grid-cols-3 gap-4 py-4">
 												<div class="col-span-2">
 													<p class="text-base text-neutral-900">
-														Creative, Strategic, Effective, a remarkable blend that will take your
-														image to the next level. A visual identity that communicates your brand
-														personalities, values, and beliefs.
+														Creative, Strategic, Effective, a remarkable
+														blend that will take your image to the next
+														level. A visual identity that communicates
+														your brand personalities, values, and
+														beliefs.
 													</p>
 												</div>
 												<div class="col-span-1 flex items-center justify-end">
@@ -207,17 +210,16 @@ const services = [
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	gsap
-		.timeline({
-			defaults: {
-				opacity: 0,
-				ease: 'power3.inOut',
-				autoAlpha: 0,
-			},
-		})
+	gsap.timeline({
+		defaults: {
+			opacity: 0,
+			ease: 'power3.inOut',
+			autoAlpha: 0,
+		},
+	})
 		.from(
 			'#banner-ball',
-			{ zIndex: 10, scale: 20, opacity: 1, duration: 1.5, backgroundColor: 'white' },
+			{ zIndex: 10, scale: 20, opacity: 1, duration: 1.5, backgroundColor: 'white' }
 			// '-=0.5',
 		)
 		.to('#banner-ball', { y: 30, opacity: 1, duration: 1, visibility: 'visible' }, '<')
@@ -232,22 +234,21 @@ const services = [
 		.set(
 			'#banner-ball',
 			{ animation: 'var(--animation-float)', opacity: 1, visibility: 'visible' },
-			'<0.85',
+			'<0.85'
 		)
 		.from('#banner-desc', { opacity: 0 }, '-=1.5');
 
-	gsap
-		.timeline({
-			scrollTrigger: {
-				trigger: '#services',
-				start: 'top bottom-=300px',
-				// end: '+=100px',
-				// scrub: true,
-				// markers: true,
-				// toggleActions: 'restart none none reverse',
-				// invalidateOnRefresh: true,
-			},
-		})
+	gsap.timeline({
+		scrollTrigger: {
+			trigger: '#services',
+			start: 'top bottom-=300px',
+			// end: '+=100px',
+			// scrub: true,
+			// markers: true,
+			// toggleActions: 'restart none none reverse',
+			// invalidateOnRefresh: true,
+		},
+	})
 		.from(
 			'#services h1',
 			{
@@ -256,7 +257,7 @@ const services = [
 				ease: 'power3.inOut',
 				duration: 1,
 				autoAlpha: 0,
-			},
+			}
 			// '-=0.5',
 		)
 		.from(
@@ -266,7 +267,7 @@ const services = [
 				ease: 'expo.inOut',
 				duration: 1,
 			},
-			'<=0.1',
+			'<=0.1'
 		);
 
 	const cards = gsap.utils.toArray<Element>('.card');

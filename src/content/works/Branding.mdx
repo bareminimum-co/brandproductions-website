@@ -1,0 +1,105 @@
+---
+title: "Branding"
+description: "Creative, Strategic, Effective, a remarkable blend that will take your image to the next level."
+cover: "./_images/branding/branding-12.jpeg"
+coverAlt: "The word astro against an illustration of planets and stars."
+---
+
+import { Image } from 'astro:assets';
+import { getImage } from "astro:assets";
+import ImageGallery from '~/components/ImageGallery.astro';
+
+
+import branding from './_images/branding/branding-1.jpg';
+import branding1 from './_images/branding/branding-2.jpg';
+import branding3 from './_images/branding/branding-3.jpg';
+import branding4 from './_images/branding/branding-4.jpg';
+import branding5 from './_images/branding/branding-5.jpg';
+import branding6 from './_images/branding/branding-6.jpg';
+import branding7 from './_images/branding/branding-7.jpeg';
+import branding8 from './_images/branding/branding-8.jpeg';
+import branding9 from './_images/branding/branding-9.jpeg';
+import branding10 from './_images/branding/branding-10.jpeg';
+import branding11 from './_images/branding/branding-11.jpeg';
+import branding12 from './_images/branding/branding-12.jpeg';
+import branding13 from './_images/branding/branding-13.jpeg';
+
+export const data = [
+    {
+        image: branding,
+        alt: 'Emar 1',
+        title: 'Emar 1',
+    },
+    {
+        image: branding1,
+        alt: 'baranding 2',
+        title: 'baranding 2',
+        //className: 'col-span-2 aspect-w-16 aspect-h-9',
+    },
+    {
+        image: branding3,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: branding4,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+        // className: 'col-span-2 aspect-w-16 aspect-h-9',
+    },
+    {
+        image: branding5,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: branding6,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: branding7,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: branding,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+
+    {
+        image: branding8,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: branding9,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: branding10,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: branding11,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: branding12,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: branding13,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+
+];
+
+
+<ImageGallery images={data} />

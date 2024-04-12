@@ -1,0 +1,65 @@
+---
+title: "Creative Acrylic"
+description: "Creative, Strategic, Effective, a remarkable blend that will take your image to the next level."
+cover: "./_images/emar/emar-1.png"
+coverAlt: "The word astro against an illustration of planets and stars."
+---
+
+import { Image } from 'astro:assets';
+import { getImage } from "astro:assets";
+import ImageGallery from '~/components/ImageGallery.astro';
+
+
+import Emar1 from './_images/emar/emar-1.png';
+import Emar2 from './_images/emar/emar-2.png';
+
+export const data = [
+    {
+        image: Emar1,
+        alt: 'Emar 1',
+        title: 'Emar 1',
+        description: 'A graphic design project for a client in the real estate industry.',
+    },
+    {
+        image: Emar2,
+        alt: 'Emar 2',
+        title: 'Ferrari',
+        description: 'A captivating and exciting project for a client in the automotive industry.',
+    },
+    {
+        image: Emar2,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: Emar2,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+        // className: 'col-span-2 aspect-w-16 aspect-h-9',
+    },
+    {
+        image: Emar2,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: Emar2,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: Emar2,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+    {
+        image: Emar2,
+        alt: 'Emar 2',
+        title: 'Emar 2',
+    },
+
+
+];
+
+
+<ImageGallery images={data} />

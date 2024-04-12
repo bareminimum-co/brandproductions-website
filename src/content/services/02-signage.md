@@ -1,8 +1,8 @@
 ---
 title: Signage & Exhibitions
 description: "Custom signs that transform your vision into reality. If you can dream of it, we will create it!"
-cover: "./_images/emar-1.png"
-coverAlt: "The word astro against an illustration of planets and stars."
+cover: "./_images/signage cover.jpg"
+coverAlt: "Side lit Led signage for RAK ceramics."
 ---
 
 Custom signs that transform your vision into reality. If you can dream of it, we will create it! Blending innovation with creativity, we create a strong identity recognized by your customer. Excellence is not an option, it’s a necessity. Elevate your brand with our signage solutions.
