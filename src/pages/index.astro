@@ -94,13 +94,13 @@ const allServices = await getCollection('services');
 												</div>
 												<div class="row-span-1">
 													<img
-														{...service.data.cover}
+														{...service.data.image1}
 														class="h-full w-full rounded-3xl object-cover"
 													/>
 												</div>
 												<div class="row-span-1">
 													<img
-														{...service.data.cover}
+														{...service.data.image2}
 														class="h-full w-full rounded-3xl object-cover"
 													/>
 												</div>
@@ -113,7 +113,7 @@ const allServices = await getCollection('services');
 													<a
 														class="whitespace-no-wrap group inline-flex items-center justify-center rounded-full border bg-neutral-900 px-6 py-3.5 text-base font-medium leading-6 text-neutral-100 transition-colors duration-300 ease-in-out focus:shadow-none focus:outline-none"
 														data-rounded="rounded-md"
-														href={`/services/${service.data.title.toLowerCase()}`}
+														href={`/services/${service.slug}`}
 													>
 														Learn more
 														<svg
