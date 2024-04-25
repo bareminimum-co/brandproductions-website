@@ -13,135 +13,134 @@ import Sabis from '~/assets/brands/sabis.png';
 import Speedo from '~/assets/brands/speedo.png';
 
 const brands = [
-	{
-		name: 'Rakez',
-		logo: Rakez,
-	},
-	{
-		name: 'RAK International corporate centre',
-		logo: RakIcc,
-	},
-	{
-		name: 'R Holding',
-		logo: RHolding,
-	},
-	{
-		name: 'Amazon',
-		logo: RasAlKahimah,
-	},
-	{
-		name: 'Reebok',
-		logo: Reebok,
-		class: '!opacity-50',
-	},
-	{
-		name: 'Ritz Carlton',
-		logo: RitzCarlton,
-	},
-	{
-		name: 'Rockport',
-		logo: Rockport,
-	},
-	{
-		name: 'Rove Hotels',
-		logo: RoveHotels,
-	},
-	{
-		name: 'Roxy',
-		logo: Roxy,
-	},
-	{
-		name: 'Sabis',
-		logo: Sabis,
-	},
-	{
-		name: 'Speedo',
-		logo: Speedo,
-	},
-	// add more brands here
-	{
-		name: 'Rakez',
-		logo: Rakez,
-	},
-	{
-		name: 'RAK International corporate centre',
-		logo: RakIcc,
-	},
-	{
-		name: 'R Holding',
-		logo: RHolding,
-	},
-	{
-		name: 'Amazon',
-		logo: RasAlKahimah,
-	},
-	{
-		name: 'Reebok',
-		logo: Reebok,
-	},
-	{
-		name: 'Ritz Carlton',
-		logo: RitzCarlton,
-	},
-	{
-		name: 'Rockport',
-		logo: Rockport,
-	},
-	{
-		name: 'Rove Hotels',
-		logo: RoveHotels,
-	},
-	{
-		name: 'Roxy',
-		logo: Roxy,
-	},
-	{
-		name: 'Sabis',
-		logo: Sabis,
-	},
-	{
-		name: 'Speedo',
-		logo: Speedo,
-	},
+  {
+    name: 'Rakez',
+    logo: Rakez,
+  },
+  {
+    name: 'RAK International corporate centre',
+    logo: RakIcc,
+  },
+  {
+    name: 'R Holding',
+    logo: RHolding,
+  },
+  {
+    name: 'Amazon',
+    logo: RasAlKahimah,
+  },
+  {
+    name: 'Reebok',
+    logo: Reebok,
+    class: '!opacity-50',
+  },
+  {
+    name: 'Ritz Carlton',
+    logo: RitzCarlton,
+  },
+  {
+    name: 'Rockport',
+    logo: Rockport,
+  },
+  {
+    name: 'Rove Hotels',
+    logo: RoveHotels,
+  },
+  {
+    name: 'Roxy',
+    logo: Roxy,
+  },
+  {
+    name: 'Sabis',
+    logo: Sabis,
+  },
+  {
+    name: 'Speedo',
+    logo: Speedo,
+  },
+  // add more brands here
+  {
+    name: 'Rakez',
+    logo: Rakez,
+  },
+  {
+    name: 'RAK International corporate centre',
+    logo: RakIcc,
+  },
+  {
+    name: 'R Holding',
+    logo: RHolding,
+  },
+  {
+    name: 'Amazon',
+    logo: RasAlKahimah,
+  },
+  {
+    name: 'Reebok',
+    logo: Reebok,
+  },
+  {
+    name: 'Ritz Carlton',
+    logo: RitzCarlton,
+  },
+  {
+    name: 'Rockport',
+    logo: Rockport,
+  },
+  {
+    name: 'Rove Hotels',
+    logo: RoveHotels,
+  },
+  {
+    name: 'Roxy',
+    logo: Roxy,
+  },
+  {
+    name: 'Sabis',
+    logo: Sabis,
+  },
+  {
+    name: 'Speedo',
+    logo: Speedo,
+  },
 ];
 ---
 
 <section class="flex justify-center bg-neutral-100">
-	<ul
-		class="ticker-container inline-block w-full overflow-clip whitespace-nowrap py-6 text-neutral-100"
-	>
-		<div class="ticker-wrapper inline-block space-x-4">
-			{
-				brands.map((brand, index) => (
-					<li class="inline-block" title={brand.name}>
-						<Image
-							src={brand.logo}
-							alt={brand.name}
-							class:list={['h-12 w-auto opacity-80 [filter:grayscale(1)]', brand?.class]}
-							width={100}
-							height={100}
-						/>
-					</li>
-				))
-			}
-		</div>
-	</ul>
+  <ul class="ticker-container flex w-full overflow-hidden whitespace-nowrap py-6 text-neutral-100">
+    <div class="ticker-items flex space-x-4">
+      {
+        brands.map((brand, index) => (
+          <li class="inline-block w-24" title={brand.name}>
+            <Image
+              src={brand.logo}
+              alt={brand.name}
+              class:list={['h-12 w-auto opacity-80 [filter:grayscale(1)]', brand?.class]}
+              width={100}
+              height={100}
+            />
+          </li>
+        ))
+      }
+    </div>
+  </ul>
 </section>
 
 <script>
-	import { gsap } from 'gsap';
+  import { gsap } from 'gsap';
 
-	// Get the ticker wrapper
-	const tickerWrapper = document.querySelector('.ticker-wrapper');
-	if (tickerWrapper) {
-		tickerWrapper.innerHTML += tickerWrapper.innerHTML;
+  // Get the ticker wrapper
+  const tickerContainer = document.querySelector('.ticker-container');
+  const tickerWrapper = document.querySelector('.ticker-items');
+  if (tickerContainer && tickerWrapper) {
+    tickerContainer.innerHTML += tickerContainer.innerHTML;
 
-		// set the width of the container
-		gsap.to('.ticker-wrapper', {
-			xPercent: -100,
-			duration: 25,
-			ease: 'none',
-			repeat: -1,
-		});
-	}
+    // set the width of the container
+    gsap.to('.ticker-items', {
+      xPercent: -100,
+      duration: 25,
+      ease: 'none',
+      repeat: -1,
+    });
+  }
 </script>
