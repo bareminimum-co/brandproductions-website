@@ -18,22 +18,30 @@ const allServices = await getCollection('services');
 <MainLayout>
   <div class="h-full bg-neutral-100">
     <!-- banner -->
-    <section class="flex min-h-[calc(100svh-220px)] items-center py-20 pb-24">
+    <section class="flex min-h-96 items-center py-20 pb-24 xl:min-h-[calc(100svh-220px)]">
       <div
-        class="mx-auto flex w-full max-w-screen-lg items-center px-10 lg:px-14 xl:max-w-screen-2xl xl:px-24"
+        class="mx-auto flex w-full max-w-screen-lg items-center px-6 lg:px-14 xl:max-w-screen-2xl xl:px-24"
       >
-        <div class="relative flex w-full flex-col items-center justify-center gap-6">
-          <div class="flex w-full self-start">
+        <div class="relative flex w-full flex-col items-center justify-center xl:gap-6">
+          <div class="relative mb-8">
+            <!-- 3d animating circle -->
+            <div
+              class="b1 h-24 w-24 animate-[--animation-float] rounded-full md:h-32 md:w-32 xl:hidden"
+              id="banner-ball-small"
+            >
+            </div>
+          </div>
+          <div class="flex w-full justify-center self-start xl:justify-start">
             <div class="overflow-clip">
               <h1
-                class="heading-1 invisible font-normal text-brand xl:text-[10rem]"
+                class="heading-1 invisible font-normal text-brand md:text-8xl xl:text-[10rem]"
                 id="banner-title-1"
                 aria-label="Production"
               >
                 Production
               </h1>
             </div>
-            <div class="relative">
+            <div class="relative hidden xl:block">
               <!-- 3d animating circle -->
 
               <div
@@ -43,22 +51,24 @@ const allServices = await getCollection('services');
               </div>
             </div>
           </div>
-          <div class="flex w-full justify-end">
-            <div class="absolute bottom-0 left-0 max-w-[30rem] overflow-hidden text-lg">
-              <p id="banner-desc" class="invisible">
-                We are experts in the field of Signage, Outdoor Advertising, In-Store Branding, and
-                Retail Displays. Our comprehensive branding solutions provide a unified and
-                impactful brand presence across multiple channels.
-              </p>
-            </div>
+          <div class="flex w-full flex-col items-center justify-center xl:flex-row xl:justify-end">
             <div class="-mb-4 overflow-clip pb-4">
               <h1
-                class="heading-1 invisible font-normal text-neutral-900 xl:text-[10rem]"
+                class="heading-1 invisible font-normal text-neutral-900 md:text-8xl xl:text-[10rem]"
                 id="banner-title-2"
                 aria-label="Agency"
               >
                 Agency
               </h1>
+            </div>
+            <div
+              class="bottom-0 left-0 mt-8 max-w-[30rem] overflow-hidden text-balance text-center text-neutral-700 md:text-lg xl:absolute xl:text-left"
+            >
+              <p id="banner-desc" class="invisible">
+                We are experts in the field of Signage, Outdoor Advertising, In-Store Branding, and
+                Retail Displays. Our comprehensive branding solutions provide a unified and
+                impactful brand presence across multiple channels.
+              </p>
             </div>
           </div>
         </div>
@@ -68,50 +78,50 @@ const allServices = await getCollection('services');
     <BrandsTicker />
     <!-- Our services -->
     <section class="py-20 pb-24" id="services">
-      <div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-2xl xl:px-24">
+      <div class="mx-auto max-w-screen-lg px-6 lg:px-14 xl:max-w-screen-2xl xl:px-24">
         <div class="-mb-4 overflow-clip pb-4">
           <h1 class="heading-1 invisible text-neutral-900">
             <span class="text-brand">Our</span> Services
           </h1>
         </div>
-        <section class="cards-container pb-[400px] pt-24">
+        <section class="cards-container pb-52 pt-12 lg:pb-[400px] lg:pt-24">
           <div>
             <div class="cards">
               {
                 allServices.map((service, index) => (
-                  <div class="card mb-56 flex max-h-[680px] w-full flex-col overflow-hidden rounded-3xl bg-slate-50">
-                    <div class="heading-4 relative flex w-full items-center gap-4 rounded-t-3xl bg-neutral-900 px-10 py-8 text-slate-50">
+                  <div class="card mb-32 flex max-h-[680px] w-full flex-col overflow-hidden rounded-3xl bg-slate-50 lg:mb-56">
+                    <div class="heading-4 relative flex w-full items-center gap-4 rounded-t-3xl bg-neutral-900 px-4 py-8 text-slate-50 md:px-10">
                       <span>0{index + 1}</span>
                       <span>{service.data.title}</span>
                     </div>
-                    <div class="relative flex flex-1 flex-col gap-4 px-10 py-8">
-                      <div class="grid grid-cols-3 grid-rows-[repeat(2,200px)] gap-4">
-                        <div class="col-span-2 row-span-2">
+                    <div class="relative flex flex-1 flex-col md:gap-6 md:px-10 md:py-8">
+                      <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:grid-rows-[repeat(2,200px)]">
+                        <div class="grid-cols-1 lg:col-span-2 lg:row-span-2">
                           <img
                             {...service.data.cover}
-                            class="h-full w-full rounded-3xl object-cover"
+                            class="h-full max-h-48 w-full object-cover md:rounded-3xl lg:max-h-max"
                           />
                         </div>
-                        <div class="row-span-1">
+                        <div class="hidden lg:row-span-1 lg:block">
                           <img
                             {...service.data.image1}
                             class="h-full w-full rounded-3xl object-cover"
                           />
                         </div>
-                        <div class="row-span-1">
+                        <div class="hidden lg:row-span-1 lg:block">
                           <img
                             {...service.data.image2}
                             class="h-full w-full rounded-3xl object-cover"
                           />
                         </div>
                       </div>
-                      <div class="grid grid-cols-3 gap-4 py-4">
+                      <div class="flex flex-col gap-4 p-6 md:grid md:grid-cols-3 md:p-0">
                         <div class="col-span-2">
                           <p class="text-base text-neutral-900">{service.data.description}</p>
                         </div>
-                        <div class="col-span-1 flex items-center justify-end">
+                        <div class="col-span-1 flex items-center md:justify-end">
                           <a
-                            class="whitespace-no-wrap group inline-flex items-center justify-center rounded-full border bg-neutral-900 px-6 py-3.5 text-base font-medium leading-6 text-neutral-100 transition-colors duration-300 ease-in-out focus:shadow-none focus:outline-none"
+                            class="whitespace-no-wrap group inline-flex items-center justify-center rounded-full border bg-neutral-900 px-5 py-3 text-sm font-medium leading-6 text-neutral-100 transition-colors duration-300 ease-in-out focus:shadow-none focus:outline-none"
                             data-rounded="rounded-md"
                             href={`/services/${service.slug}`}
                           >
@@ -120,7 +130,7 @@ const allServices = await getCollection('services');
                               xmlns="http://www.w3.org/2000/svg"
                               focusable="false"
                               viewBox="0 0 24 24"
-                              class="ml-3 inline-block h-5 w-5 transition-transform duration-500 ease-in-out group-hover:-rotate-45 group-hover:transform"
+                              class="ml-3 inline-block h-4 w-4 transition-transform duration-500 ease-in-out group-hover:-rotate-45 group-hover:transform"
                             >
                               <path
                                 d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"
