@@ -4,107 +4,141 @@ import ContactForm from '~/components/ContactForm.astro';
 ---
 
 <MainLayout headerClass="bg-white" hidePreFooter={true}>
-	<div class="py-20 pb-24">
-		<div class="heading-1 flex flex-col justify-start overflow-clip text-neutral-900">
-			<h1 class="invisible text-center">Get In Touch</h1>
-		</div>
-	</div>
-	<div
-		class="relative flex content-center items-center justify-center bg-neutral-100 py-24 text-xs"
-	>
-		<div class="relative flex flex-grow flex-col content-center items-center justify-start px-8">
-			<div
-				class="invisible relative flex w-full max-w-screen-xl flex-col content-start items-start justify-start overflow-clip rounded-3xl lg:flex-row"
-				id="contact-form"
-			>
-				<div
-					class="relative flex max-w-full flex-col content-start items-start justify-center gap-[4.50rem] self-stretch bg-neutral-900 px-8 py-10 lg:max-w-lg lg:px-12 lg:py-16"
-				>
-					<div class="flex flex-col content-start items-start justify-center gap-[0.63rem]">
-						<div
-							style="word-break: break-word;"
-							class="heading-5 flex flex-col justify-start text-neutral-100"
-						>
-							<h3>Contact Details</h3>
-						</div>
-						<div
-							style="word-break: break-word;"
-							class="flex flex-col justify-start text-lg font-medium text-neutral-300"
-						>
-							<p>
-								Novelio provides a concise format for showcasing essential contact details leaps
-								next level of innovation.
-							</p>
-						</div>
-					</div>
-					<div
-						class="relative flex flex-col content-start items-start justify-center gap-[3.75rem]"
-					>
-						<div class="flex flex-col content-start items-start justify-center gap-[0.63rem]">
-							<div
-								style="word-break: break-word;"
-								class="heading-6 flex flex-col justify-start text-neutral-100"
-							>
-								<h4>Our Location</h4>
-							</div>
-							<div
-								style="word-break: break-word;"
-								class="flex flex-col justify-start text-lg font-medium text-neutral-300"
-							>
-								<p>3448 Ile De France St #242, Fort Wainwright, Alaska 99703, United States</p>
-							</div>
-						</div>
-						<div class="flex flex-col content-center justify-center gap-4">
-							<div
-								style="word-break: break-word;"
-								class="heading-6 flex flex-col justify-start text-neutral-100"
-							>
-								<h4>Phone Number</h4>
-							</div>
-							<div
-								style="word-break: break-word;"
-								class="flex flex-col justify-start text-lg font-medium text-neutral-300"
-							>
-								<p>+1 (717) 550-1675</p>
-								<p>+4 (248) 762-0356</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div
-					class="flex flex-grow flex-col content-start items-start justify-center self-stretch bg-neutral-200 p-4 lg:p-16"
-				>
-					<div class="w-full rounded-xl bg-neutral-100 p-4 lg:p-10">
-						<ContactForm />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script>
-		import { gsap } from 'gsap';
-		import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  <div class="py-20 pb-24">
+    <div class="heading-1 flex flex-col justify-start overflow-clip text-neutral-900">
+      <h1 class="invisible text-center">Get In Touch</h1>
+    </div>
+  </div>
+  <div
+    class="relative flex content-center items-center justify-center bg-neutral-100 py-24 text-xs"
+  >
+    <div class="relative flex flex-grow flex-col content-center items-center justify-start px-8">
+      <div
+        class="invisible relative flex w-full max-w-screen-xl flex-col content-start items-start justify-start overflow-clip rounded-3xl lg:flex-row"
+        id="contact-form"
+      >
+        <div
+          class="relative flex max-w-full flex-col content-start items-start justify-center gap-[4.50rem] self-stretch bg-neutral-900 px-8 py-10 lg:max-w-lg lg:px-12 lg:py-16"
+        >
+          <div class="flex flex-col content-start items-start justify-center gap-[0.63rem]">
+            <div
+              style="word-break: break-word;"
+              class="heading-5 flex flex-col justify-start text-neutral-100"
+            >
+              <h3>Contact Details</h3>
+            </div>
+            <div
+              style="word-break: break-word;"
+              class="flex flex-col justify-start text-lg font-medium text-neutral-300"
+            >
+              <p>Have a question or need to get in touch? We're here to help.</p>
+            </div>
+          </div>
+          <div
+            class="relative flex flex-col content-start items-start justify-center gap-[3.75rem]"
+          >
+            <div class="flex flex-col content-start items-start justify-center gap-[0.63rem]">
+              <div
+                style="word-break: break-word;"
+                class="heading-6 flex flex-col justify-start text-neutral-100"
+              >
+                <h4>Our Location</h4>
+              </div>
+              <div
+                style="word-break: break-word;"
+                class="flex flex-col justify-start text-lg font-medium text-neutral-300"
+              >
+                <p>P.O. Box: 8525, Ajman, UAE</p>
+                <a
+                  href="https://maps.app.goo.gl/yKgvSZFXTdsjrdjW8"
+                  target="_blank"
+                  referrerpolicy="no-referrer"
+                  class:list={[
+                    'w-fit transition-colors hover:bg-white hover:text-neutral-800',
+                    'inline-flex items-center underline underline-offset-2',
+                  ]}
+                  >View on Map
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="ml-1 inline h-5 w-5"
+                    ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                      d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path><path
+                      d="M11 13l9 -9"></path><path d="M15 4h5v5"></path></svg
+                  >
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col content-center justify-center gap-4">
+              <div
+                style="word-break: break-word;"
+                class="heading-6 flex flex-col justify-start text-neutral-100"
+              >
+                <h4>Phone Number</h4>
+              </div>
+              <div
+                style="word-break: break-word;"
+                class="flex flex-col justify-start text-lg font-medium text-neutral-300"
+              >
+                <p>
+                  Landline: <a
+                    href="tel:+97167424142"
+                    class:list={['w-fit transition-colors hover:bg-white hover:text-neutral-800']}
+                    >+971 6 742 4142</a
+                  >
+                </p>
+                <p>
+                  Mobile: <a
+                    href="tel:+971566378902"
+                    class:list={['w-fit transition-colors hover:bg-white hover:text-neutral-800']}
+                    >+971 56 637 8902</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-grow flex-col content-start items-start justify-center self-stretch bg-neutral-200 p-4 lg:p-16"
+        >
+          <div class="w-full rounded-xl bg-neutral-100 p-4 lg:p-10">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-		gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-		const tl = gsap.timeline({
-			defaults: {
-				opacity: 0,
-				ease: 'power3.inOut',
-				autoAlpha: 0,
-			},
-		});
-		tl.from('h1', {
-			y: 60,
-			duration: 0.5,
-		}).from(
-			'#contact-form',
-			{
-				y: 80,
-				duration: 1,
-				ease: 'expo.out',
-			},
-			'<0.25',
-		);
-	</script>
+    const tl = gsap.timeline({
+      defaults: {
+        opacity: 0,
+        ease: 'power3.inOut',
+        autoAlpha: 0,
+      },
+    });
+    tl.from('h1', {
+      y: 60,
+      duration: 0.5,
+    }).from(
+      '#contact-form',
+      {
+        y: 80,
+        duration: 1,
+        ease: 'expo.out',
+      },
+      '<0.25',
+    );
+  </script>
 </MainLayout>
