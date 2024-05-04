@@ -207,7 +207,8 @@ const allServices = await getCollection('services');
       { animation: 'var(--animation-float)', opacity: 1, visibility: 'visible' },
       '<0.85',
     )
-    .from('#banner-desc', { opacity: 0 }, '-=1.5');
+    .from('#banner-desc', { opacity: 0 }, '-=1.5')
+    .from('#brands-ticker', { opacity: 0 }, '-=1.5');
 
   gsap
     .timeline({
