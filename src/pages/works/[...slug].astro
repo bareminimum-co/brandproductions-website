@@ -4,11 +4,11 @@ import { getCollection } from 'astro:content';
 import MainLayout from '~/layouts/MainLayout.astro';
 
 export async function getStaticPaths() {
-	const workEntries = await getCollection('works');
-	return workEntries.map((entry) => ({
-		params: { slug: entry.slug },
-		props: { entry },
-	}));
+  const workEntries = await getCollection('works');
+  return workEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
 
 const { entry } = Astro.props;
@@ -16,21 +16,44 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout>
-	<div class="h-full bg-neutral-100">
-		<!-- banner -->
-		<section class="py-20 pb-24">
-			<div class="flex flex-col items-center justify-center text-center">
-				<div class="content -mb-4 overflow-clip pb-4">
-					<h1 class="heading-1 text-neutral-900" id="main-heading">
-						{entry.data.title}
-					</h1>
-				</div>
-			</div>
-		</section>
-		<section class="pb-24">
-			<div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-lg xl:px-24">
-				<Content />
-			</div>
-		</section>
-	</div>
+  <div class="h-full bg-neutral-100">
+    <!-- banner -->
+    <section class="py-20 pb-24">
+      <div class="flex flex-col items-center justify-center text-center">
+        <div class="content -mb-4 overflow-clip pb-4">
+          <h1 class="heading-1 invisible text-neutral-900" id="main-heading">
+            {entry.data.title}
+          </h1>
+        </div>
+      </div>
+    </section>
+    <section class="pb-24">
+      <div
+        class="mx-auto max-w-screen-lg px-8 lg:px-14 xl:max-w-screen-lg xl:px-24"
+        id="image-grid"
+      >
+        <Content />
+      </div>
+    </section>
+  </div>
+  <script>
+    import { gsap } from 'gsap';
+
+    const tl = gsap.timeline({
+      defaults: {
+        opacity: 0,
+        ease: 'power3.inOut',
+        autoAlpha: 0,
+      },
+    });
+    tl.from('#main-heading', {
+      y: 60,
+      duration: 0.5,
+    }).from('#gallery', {
+      y: 80,
+      duration: 1,
+      delay: -0.25,
+      ease: 'expo.out',
+    });
+  </script>
 </MainLayout>

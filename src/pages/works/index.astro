@@ -45,53 +45,76 @@ const allWorks = await getCollection('works');
 ---
 
 <MainLayout>
-	<div class="h-full bg-neutral-100">
-		<section class="py-20 pb-24">
-			<h1 class="heading-1 text-center text-neutral-900" id="main-heading">
-				<span class="text-brand">Our</span> Works
-			</h1>
-		</section>
-		<!-- works cards -->
-		<section
-			class="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-10 pb-48 lg:px-14 xl:grid-cols-2 xl:px-24"
-		>
-			{
-				allWorks.map((service, index) => (
-					<div class="flex flex-col items-center rounded-3xl bg-neutral-200 p-8">
-						<div class="flex h-auto w-full items-center justify-center rounded-full">
-							<Image
-								src={service.data.cover}
-								alt={service.data.coverAlt}
-								class="aspect-video h-full w-full rounded-xl bg-neutral-100 object-cover object-center"
-							/>
-						</div>
-						<div class="mt-12 flex w-full flex-col items-start gap-4">
-							<h2 class="heading-4 text-neutral-900">{service.data.title}</h2>
-							<p class="text-neutral-600">{service.data.description}</p>
-							<div class="self-end">
-								<a
-									class="whitespace-no-wrap group inline-flex items-center justify-center rounded-full border border-neutral-800 px-6 py-3.5 text-base font-medium leading-6 text-neutral-800 transition-colors duration-300 ease-in-out hover:bg-neutral-900 hover:text-neutral-100 focus:shadow-none focus:outline-none"
-									data-rounded="rounded-md"
-									href={`/works/${service.slug}`}
-								>
-									Learn More
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										focusable="false"
-										viewBox="0 0 24 24"
-										class="ml-3 inline-block h-5 w-5 transition-transform duration-500 ease-in-out group-hover:-rotate-45 group-hover:transform"
-									>
-										<path
-											d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"
-											fill="currentColor"
-										/>
-									</svg>
-								</a>
-							</div>
-						</div>
-					</div>
-				))
-			}
-		</section>
-	</div>
+  <div class="h-full bg-neutral-100">
+    <section class="py-20 pb-24">
+      <div class="content overflow-clip">
+        <h1 class="heading-1 invisible text-center text-neutral-900" id="main-heading">
+          <span class="text-brand">Our</span> Works
+        </h1>
+      </div>
+    </section>
+    <!-- works cards -->
+    <section
+      class="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-10 pb-48 lg:px-14 xl:grid-cols-2 xl:px-24"
+      id="works-cards"
+    >
+      {
+        allWorks.map((service, index) => (
+          <div class="flex flex-col items-center rounded-3xl bg-neutral-200 p-8">
+            <div class="flex h-auto w-full items-center justify-center rounded-full">
+              <Image
+                src={service.data.cover}
+                alt={service.data.coverAlt}
+                class="aspect-video h-full w-full rounded-xl bg-neutral-100 object-cover object-center"
+              />
+            </div>
+            <div class="mt-12 flex w-full flex-col items-start gap-4">
+              <h2 class="heading-4 text-neutral-900">{service.data.title}</h2>
+              <p class="text-neutral-600">{service.data.description}</p>
+              <div class="self-end">
+                <a
+                  class="whitespace-no-wrap group inline-flex items-center justify-center rounded-full border border-neutral-800 px-6 py-3.5 text-base font-medium leading-6 text-neutral-800 transition-colors duration-300 ease-in-out hover:bg-neutral-900 hover:text-neutral-100 focus:shadow-none focus:outline-none"
+                  data-rounded="rounded-md"
+                  href={`/works/${service.slug}`}
+                >
+                  Learn More
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                    class="ml-3 inline-block h-5 w-5 transition-transform duration-500 ease-in-out group-hover:-rotate-45 group-hover:transform"
+                  >
+                    <path
+                      d="M15 5l-1.41 1.41L18.17 11H2v2h16.17l-4.59 4.59L15 19l7-7-7-7z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+  </div>
+  <script>
+    import { gsap } from 'gsap';
+
+    const tl = gsap.timeline({
+      defaults: {
+        opacity: 0,
+        ease: 'power3.inOut',
+        autoAlpha: 0,
+      },
+    });
+    tl.from('#main-heading', {
+      y: 60,
+      duration: 0.5,
+    }).from('#works-cards', {
+      y: 80,
+      duration: 1,
+      delay: -0.25,
+      ease: 'expo.out',
+    });
+  </script>
 </MainLayout>
