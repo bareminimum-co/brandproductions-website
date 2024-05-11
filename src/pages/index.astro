@@ -180,34 +180,45 @@ const allServices = await getCollection('services');
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap
-    .timeline({
-      defaults: {
-        opacity: 0,
-        ease: 'power3.inOut',
-        autoAlpha: 0,
-      },
-    })
-    .from(
-      '#banner-ball',
-      { zIndex: 10, scale: 20, opacity: 1, duration: 1.5, backgroundColor: 'white' },
-      // '-=0.5',
-    )
-    .to('#banner-ball', { y: 30, opacity: 1, duration: 1, visibility: 'visible' }, '<')
-    .from('#banner-title-1, #banner-title-2', {
-      y: 100,
-      duration: 1,
-      stagger: 0.5,
-      // skewY: 5,
-    })
-    .to('#banner-ball', { y: -50, duration: 1, opacity: 1, visibility: 'visible' }, '<0.8')
-    .to('#banner-ball', { y: 0, duration: 1.2, opacity: 1, visibility: 'visible' }, '<0.85')
-    .set(
-      '#banner-ball',
-      { animation: 'var(--animation-float)', opacity: 1, visibility: 'visible' },
-      '<0.85',
-    )
-    .from('#banner-desc', { opacity: 0 }, '-=1.5');
+  const mm = gsap.matchMedia();
+
+  mm.add(
+    {
+      desktop: '(min-width: 1024px)',
+      mobile: '(max-width: 1023px)',
+    },
+    (context) => {
+      const { desktop } = context?.conditions || {};
+      const tl = gsap
+        .timeline({
+          defaults: {
+            opacity: 0,
+            ease: 'power3.inOut',
+            autoAlpha: 0,
+          },
+        })
+        .from(
+          '#banner-ball',
+          { zIndex: 10, scale: 20, opacity: 1, duration: 1.5, backgroundColor: 'white' },
+          // '-=0.5',
+        )
+        .to('#banner-ball', { y: 30, opacity: 1, duration: 1, visibility: 'visible' }, '<')
+        .from(
+          '#banner-title-1, #banner-title-2',
+          { y: 100, duration: 1, stagger: 0.5 },
+          desktop ? '+' : '-=1.5',
+        )
+        .to('#banner-ball', { y: -50, duration: 1, opacity: 1, visibility: 'visible' }, '<0.8')
+        .to('#banner-ball', { y: 0, duration: 1.2, opacity: 1, visibility: 'visible' }, '<0.85')
+        .set(
+          '#banner-ball',
+          { animation: 'var(--animation-float)', opacity: 1, visibility: 'visible' },
+          '<0.85',
+        )
+        .from('#banner-desc', { opacity: 0 }, '-=1.5')
+        .from('#brands-ticker', { opacity: 0 }, '-=1.5');
+    },
+  );
 
   gsap
     .timeline({

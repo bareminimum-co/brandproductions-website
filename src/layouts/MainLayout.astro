@@ -8,8 +8,8 @@ import '~/styles/fonts.css';
 import '~/styles/tailwind.css';
 
 interface Props {
-	hidePreFooter?: boolean;
-	headerClass?: string;
+  hidePreFooter?: boolean;
+  headerClass?: string;
 }
 
 const title = 'Brandproductions.ae';
@@ -18,70 +18,70 @@ const { hidePreFooter = false, headerClass } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta
-			name="description"
-			content="We help you create a brand that stands out. From creating stunning Websites to managing a social presence, we've got you covered"
-		/>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<!-- <script
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="We help you create a brand that stands out. From creating stunning Websites to managing a social presence, we've got you covered"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <script
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         ></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         ></script> -->
-	</head>
-	<body>
-		<div class="flex min-h-screen flex-col overflow-x-hidden">
-			<!-- <div id="nav" class="sticky top-0 z-20 max-h-screen bg-black"> -->
+  </head>
+  <body>
+    <div class="flex min-h-screen flex-col overflow-x-hidden">
+      <!-- <div id="nav" class="sticky top-0 z-20 max-h-screen bg-black"> -->
 
-			<Header class:list={[headerClass]} />
-			<!-- </div> -->
+      <Header class:list={[headerClass]} />
+      <!-- </div> -->
 
-			<main id="main" class="relative z-10 flex flex-1 flex-col">
-				<slot />
-			</main>
-			{!hidePreFooter && <PreFooterCTA />}
-			<Footer />
-		</div>
-	</body>
+      <main id="main" class="relative z-10 flex flex-1 flex-col">
+        <slot />
+      </main>
+      {!hidePreFooter && <PreFooterCTA />}
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <script is:inline>
-	(function (w, d) {
-		w['CollectId'] = '65ec80c272474ab9834eed90';
-		var h = d.head || d.getElementsByTagName('head')[0];
-		var s = d.createElement('script');
-		s.setAttribute('type', 'text/javascript');
-		s.async = true;
-		s.setAttribute('src', 'https://collectcdn.com/launcher.js');
-		h.appendChild(s);
-	})(window, document);
+  (function (w, d) {
+    w['CollectId'] = '65ec80c272474ab9834eed90';
+    var h = d.head || d.getElementsByTagName('head')[0];
+    var s = d.createElement('script');
+    s.setAttribute('type', 'text/javascript');
+    s.async = true;
+    s.setAttribute('src', 'https://collectcdn.com/launcher.js');
+    h.appendChild(s);
+  })(window, document);
 </script>
 
-<!-- <script>
-	import Lenis from '@studio-freight/lenis';
+<script>
+  import Lenis from '@studio-freight/lenis';
 
-	const lenis = new Lenis({
-		duration: 1,
-		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-	});
+  const lenis = new Lenis({
+    duration: 1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  });
 
-	function raf(time) {
-		lenis.raf(time);
-		requestAnimationFrame(raf);
-	}
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
 
-	requestAnimationFrame(raf);
-</script> -->
+  requestAnimationFrame(raf);
+</script>
 
 <script>
-	import Alpine from 'alpinejs';
-	import focus from '@alpinejs/focus';
+  import Alpine from 'alpinejs';
+  import focus from '@alpinejs/focus';
 
-	Alpine.plugin(focus);
+  Alpine.plugin(focus);
 </script>

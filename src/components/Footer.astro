@@ -1,124 +1,158 @@
 ---
+const pageLinks = [
+  { name: 'About Us', href: '/about' },
+  { name: 'Services', href: '/services/' },
+  { name: 'Works', href: '/works/' },
+  { name: 'Contact Us', href: '/contact/' },
+];
 
+const services1Links = [
+  { name: 'Branding', href: 'services/01-branding/' },
+  { name: 'Signages', href: 'services/02-signage/' },
+  { name: 'Printing', href: 'services/03-printing-and-packaging/' },
+  { name: 'Corporate Gifts', href: 'services/06-corprate-gifts/' },
+];
+
+const services2Links = [
+  { name: 'Events & Exhibitions', href: 'services/07-events-and-exhibition/' },
+  { name: 'Photography & Video', href: 'services/08-photography-and-videography/' },
+];
+
+const hoverlinkClasses = 'w-fit transition-colors hover:bg-white hover:text-neutral-800';
 ---
 
-<div
-  class="flex flex-col content-center items-center justify-center bg-neutral-900 pb-10 pt-24 text-xs"
->
-  <div class="flex flex-col content-center items-center justify-start px-8">
-    <div class="flex flex-col content-center items-center justify-center">
-      <div class="flex content-center items-center justify-center gap-[6.25rem]">
-        <div class="flex flex-grow content-start items-start justify-between">
-          <div class="flex flex-col content-start items-start justify-start gap-4">
-            <div class="flex flex-col justify-start text-xl font-bold text-neutral-100">
-              <h5>Say Hi 👋🏻</h5>
-            </div>
-            <div
-              class="flex flex-col content-start items-start justify-start gap-2 text-lg font-medium text-blue-700"
+<div class="justify-center bg-neutral-900 pb-10 pt-24">
+  <div class="mx-auto max-w-screen-2xl px-8 lg:px-14 xl:px-24">
+    <!-- contact details -->
+    <div class="flex flex-col justify-between gap-4 md:flex-row">
+      <ul class="space-y-2 text-sm text-neutral-100">
+        <li>P.O. Box: 8525, Ajman, UAE</li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="mr-1 inline h-4 w-4"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z"
+            ></path></svg
+          >
+          Landline: <a href="tel:+97167424142" class:list={[hoverlinkClasses]}>+971 6 742 4142</a>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="mr-1 inline h-4 w-4"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M16 2a3 3 0 0 1 2.995 2.824l.005 .176v14a3 3 0 0 1 -2.824 2.995l-.176 .005h-8a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h8zm-4 14a1 1 0 0 0 -.993 .883l-.007 .117l.007 .127a1 1 0 0 0 1.986 0l.007 -.117l-.007 -.127a1 1 0 0 0 -.993 -.883zm1 -12h-2l-.117 .007a1 1 0 0 0 0 1.986l.117 .007h2l.117 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z"
+            ></path></svg
+          >
+          Mobile: <a href="tel:+971566378902" class:list={[hoverlinkClasses]}>+971 56 637 8902</a>
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="mr-1 inline h-4 w-4"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z"
+            ></path><path
+              d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z"
+            ></path></svg
+          >
+          <a href="mailto:sales@brandproductions.ae" class:list={[hoverlinkClasses]}
+            >sales@brandproductions.ae</a
+          >
+        </li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="mr-1 inline h-4 w-4"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z"
+            ></path></svg
+          >
+          <a
+            href="https://maps.app.goo.gl/yKgvSZFXTdsjrdjW8"
+            target="_blank"
+            referrerpolicy="no-referrer"
+            class:list={[hoverlinkClasses, 'inline-flex items-center']}
+            >Get direction
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="ml-1 inline h-4 w-4"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path><path
+                d="M11 13l9 -9"></path><path d="M15 4h5v5"></path></svg
             >
-              <div>
-                <div class="contents">
-                  <a
-                    href="https://sailr.framer.website"
-                    class="flex content-center items-center justify-center"
-                    ><div class="flex cursor-pointer flex-col justify-start text-neutral-100">
-                      <p>https://sailr.framer.website</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div>
-                <div class="contents">
-                  <a
-                    href="https://innovision.framer.website/tel:+88-0123-4567"
-                    class="flex content-center items-center justify-center"
-                    ><div class="flex cursor-pointer flex-col justify-start text-neutral-100">
-                      <p>+88-0123-4567</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            style="word-break: break-word;"
-            class="flex flex-grow flex-col justify-start font-medium text-neutral-100"
-          >
-            <p>Alrights reserved Innovision® 2023 Made by Sailr Agency</p>
-          </div>
-        </div>
-        <div class="flex flex-grow content-center items-center justify-between">
-          <div
-            class="flex flex-col content-start items-start justify-start gap-2 text-lg font-medium text-blue-700"
-          >
-            <div>
-              <div class="contents">
-                <a
-                  href="https://www.linkedin.com/"
-                  class="flex content-center items-center justify-center"
-                >
-                  <div class="flex cursor-pointer flex-col justify-start text-neutral-100">
-                    <p>LinkedIn</p>
-                  </div>
+          </a>
+        </li>
+      </ul>
+      <div class="flex flex-col justify-between gap-12 sm:flex-row">
+        <ul class="space-y-2 text-sm text-neutral-100">
+          {
+            pageLinks.map((link) => (
+              <li>
+                <a href={link.href} class:list={[hoverlinkClasses]}>
+                  {link.name}
                 </a>
-              </div>
-            </div>
-            <div>
-              <div class="contents">
-                <a
-                  href="https://www.instagram.com"
-                  class="flex content-center items-center justify-center"
-                >
-                  <div class="flex cursor-pointer flex-col justify-start text-neutral-100">
-                    <p>Instgram</p>
-                  </div>
+              </li>
+            ))
+          }
+        </ul>
+        <ul class="space-y-2 text-sm text-neutral-100">
+          {
+            services1Links.map((link) => (
+              <li>
+                <a href={link.href} class:list={[hoverlinkClasses]}>
+                  {link.name}
                 </a>
-              </div>
-            </div>
-            <div>
-              <div class="contents">
-                <a
-                  href="https://www.twitter.com"
-                  class="flex content-center items-center justify-center"
-                >
-                  <div class="flex cursor-pointer flex-col justify-start text-neutral-100">
-                    <p>Twitter</p>
-                  </div>
+              </li>
+            ))
+          }
+        </ul>
+        <ul class="-mt-10 space-y-2 text-sm text-neutral-100 sm:mt-0">
+          {
+            services2Links.map((link) => (
+              <li>
+                <a href={link.href} class:list={[hoverlinkClasses]}>
+                  {link.name}
                 </a>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col content-center items-center justify-center gap-3">
-            <div class="text-blue-700">
-              <div class="contents">
-                <a
-                  href="/"
-                  class="flex content-center items-center justify-center rounded-3xl px-3 py-6"
-                >
-                  <div class="cursor-pointer text-neutral-100">
-                    <div class="contents">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        color='var(--token-1067138e-b66d-4336-8603-018a311a614c, rgb(247, 247, 247)) /* {"name":"Secondary"} */'
-                        fill="rgb(247, 247, 247)"
-                        class="inline-block h-5 w-5"
-                      >
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="rgb(247, 247, 247)"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col justify-start font-bold text-neutral-100">
-          <p>Back To Home</p>
-        </div>
+              </li>
+            ))
+          }
+        </ul>
       </div>
+    </div>
+    <!-- divider -->
+    <div class="my-4 border-t border-neutral-800"></div>
+    <!-- copyright -->
+    <div class="flex flex-col justify-between gap-1 md:flex-row">
+      <p class="text-sm text-neutral-500">
+        Copyright © <span>{`${new Date().getFullYear()}`}</span> All rights reserved | Brand Productions
+      </p>
+      <p class="text-sm text-neutral-500">Made with 💖 by <a>Bareminimum</a></p>
     </div>
   </div>
 </div>
