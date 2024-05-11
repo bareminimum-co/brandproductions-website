@@ -1,8 +1,13 @@
 ---
-title: Signage & Exhibitions
+title: Signage
 description: "Custom signs that transform your vision into reality. If you can dream of it, we will create it!"
-cover: "./_images/signage cover.jpg"
+cover: "./_images/signage1.png"
 coverAlt: "Side lit Led signage for RAK ceramics."
+image1: "./_images/signage cover.jpg"
+image1Alt: "carpender working on a wood furniture."
+image2: "./_images/signage2.png"
+image2Alt: "carpender working on a wood furniture."
+
 ---
 
 Custom signs that transform your vision into reality. If you can dream of it, we will create it! Blending innovation with creativity, we create a strong identity recognized by your customer. Excellence is not an option, it’s a necessity. Elevate your brand with our signage solutions.

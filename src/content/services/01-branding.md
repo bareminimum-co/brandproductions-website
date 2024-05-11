@@ -3,8 +3,11 @@ title: Branding
 description: "Branding creates a unique identity for businesses, building trust, loyalty, and recognition among consumers."
 cover: "./_images/brandingcover.png"
 coverAlt: "The word astro against an illustration of planets and stars."
-image1: "./_images/brandingcover.png"
-image2: "./_images/brandingcover.png"
+image1: "./_images/branding1.png"
+image1Alt: "carpender working on a wood furniture."
+image2: "./_images/branding3.png"
+image2Alt: "carpender working on a wood furniture."
+
 ---
 
 Creative, Strategic, Effective, a remarkable blend that will take your image to the next level. A visual identity that communicates your brand personalities, values, and beliefs. An identity that connects with your audience and is memorable. A promise to your customers.

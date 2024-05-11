@@ -1,8 +1,15 @@
 ---
 title: Creative Acrylic
-description: "Create your world of imagination. Formulate reality out of your vision. "
-cover: "./_images/signage 2.png"
+description: "Creating and carving any material to a masterpiece is our forte. "
+cover: "./_images/acrylic1.png"
 coverAlt: "The word astro against an illustration of planets and stars."
+image1: "./_images/acrylic3.png"
+image1Alt: "carpender working on a wood furniture."
+image2: "./_images/acrylic4.jpg"
+image2Alt: "arcylic lamp."
+image3: "./_images/acrylic4.png"
+image3Alt: "gym acrilyic partition."
+
 ---
 
 Create your world of imagination. Formulate reality out of your vision. A wide spectrum of facilities from the best digital and offset printing press. Brand Production is an ideal solution for all your needs.

@@ -1,8 +1,13 @@
 ---
-title: Printing
-description: "Create your world of imagination. Formulate reality out of your vision. "
+title: Printing and Packaging
+description: "A wide spectrum of facilities from the best digital and offset printing press. Brand Production is an ideal solution for all your needs. "
 cover: "./_images/printing.png"
 coverAlt: "The word astro against an illustration of planets and stars."
+image1: "./_images/packaging.png"
+image1Alt: "carpender working on a wood furniture."
+image2: "./_images/printingcopy.png"
+image2Alt: "carpender working on a wood furniture."
+
 ---
 
 Create your world of imagination. Formulate reality out of your vision. A wide spectrum of facilities from the best digital and offset printing press. Brand Production is an ideal solution for all your needs.

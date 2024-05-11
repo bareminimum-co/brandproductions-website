@@ -1,126 +1,129 @@
 ---
 import MainLayout from '~/layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
+import GroupPhoto from '~/assets/groupphoto.jpg';
+import Events from '~/assets/events.png';
 ---
 
 <MainLayout>
-	<div class="h-full bg-neutral-100">
-		<!-- banner -->
-		<section class="py-20 pb-24">
-			<div class="flex flex-col items-center justify-center text-center">
-				<div class="content overflow-clip">
-					<h1 class="heading-1 invisible text-neutral-900" id="main-heading">
-						<span class="text-brand">About</span> Us
-					</h1>
-				</div>
-				<div class="content overflow-clip">
-					<p
-						class="invisible mt-4 max-w-4xl text-balance text-xl font-medium leading-8 text-gray-700"
-						id="sub-heading"
-					>
-						Founded in 2012, Innovision is a strategic branding and design agency that champions the
-						biggest ideas and leaps next level of innovation.
-					</p>
-				</div>
+  <div class="h-full bg-neutral-100">
+    <!-- banner -->
+    <section class="py-20 pb-24">
+      <div class="flex flex-col items-center justify-center text-center">
+        <div class="content overflow-clip">
+          <h1 class="heading-1 invisible text-neutral-900" id="main-heading">
+            <span class="text-brand">About</span> Us
+          </h1>
+        </div>
+        <div class="content overflow-clip">
+          <p
+            class="invisible mt-4 max-w-4xl text-balance text-xl font-medium leading-8 text-gray-700"
+            id="sub-heading"
+          >
+            Founded in 2016, Brand production is a complete one stop solution for branding and
+            design agency that champions the biggest ideas and leaps next level of innovation.
+          </p>
+        </div>
 
-				<div class="invisible mt-12 w-[90%] max-w-3xl lg:w-[80%] xl:max-w-6xl" id="banner-image">
-					<Image
-						src={'https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png'}
-						srcset="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=512 512w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=2048 2048w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png 3486w"
-						class="h-full w-full rounded-3xl bg-neutral-100"
-						width={126}
-						height={40}
-						alt="Brand Productions"
-						loading="eager"
-					/>
-					<!-- <img
+        <div class="invisible mt-12 w-[90%] max-w-3xl lg:w-[80%] xl:max-w-6xl" id="banner-image">
+          <Image
+            src={GroupPhoto}
+            class="h-full w-full rounded-3xl bg-neutral-100 grayscale filter"
+            width={1024}
+            height={40}
+            alt="Brand Productions"
+            loading="eager"
+          />
+          <!-- <img
 						src="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png"
 						srcset="https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=512 512w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png?scale-down-to=2048 2048w, https://framerusercontent.com/images/kDwkZjvqknm6VIL5XUoUhqukk.png 3486w"
 						class="h-full w-full rounded-3xl bg-neutral-100"
 					/> -->
-				</div>
-			</div>
-		</section>
-		<!-- our story -->
-		<section class="py-20 pb-48">
-			<div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-2xl xl:px-24">
-				<h1 style="word-break: break-word;" class="heading-1 text-neutral-900">Our Story</h1>
-				<div
-					class="mt-24 flex w-full flex-col items-center justify-between gap-16 lg:flex-row lg:items-start lg:gap-12 xl:gap-16"
-				>
-					<div
-						class="aspect-[0.95/1] h-auto w-full max-w-[500px] lg:w-[50%] lg:max-w-max 2xl:w-[45%]"
-					>
-						<img
-							src="https://framerusercontent.com/images/BfsDpZLNwgxPPPI4INNkOGG2E.png"
-							srcset="https://framerusercontent.com/images/BfsDpZLNwgxPPPI4INNkOGG2E.png?scale-down-to=512 466w, https://framerusercontent.com/images/BfsDpZLNwgxPPPI4INNkOGG2E.png?scale-down-to=1024 933w, https://framerusercontent.com/images/BfsDpZLNwgxPPPI4INNkOGG2E.png?scale-down-to=2048 1867w, https://framerusercontent.com/images/BfsDpZLNwgxPPPI4INNkOGG2E.png 2480w"
-							class="h-full w-full rounded-3xl bg-neutral-100 object-fill object-center"
-						/>
-					</div>
-					<div class="flex max-w-2xl flex-col gap-16 lg:max-w-md lg:gap-20 xl:max-w-2xl">
-						<div>
-							<p
-								style="word-break: break-word;"
-								class="text-balance bg-neutral-100 text-xl font-medium leading-8 text-neutral-700"
-							>
-								Founded in 2012, our agency started as a small team with big dreams. We recognized
-								the need for innovative and effective solutions that could help businesses thrive in
-								a rapidly evolving digital world. With a deep understanding of the power of
-								creativity and technology.
-							</p>
-						</div>
-						<div>
-							<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-								<div class="flex flex-col items-start gap-4">
-									<div class="heading-3">350+</div>
-									<p class="">Projects completed</p>
-								</div>
-								<div class="flex flex-col items-start gap-4">
-									<div class="heading-3">200+</div>
-									<p class="">Happy Clients</p>
-								</div>
-								<div class="flex flex-col items-start gap-4">
-									<div class="heading-3">32+</div>
-									<p class="">Team Members</p>
-								</div>
-								<div class="flex flex-col items-start gap-4">
-									<div class="heading-3">11+</div>
-									<p class="">Years Of Experiences</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</div>
-	<script>
-		import { gsap } from 'gsap';
-		import { ScrollTrigger } from 'gsap/ScrollTrigger';
+        </div>
+      </div>
+    </section>
+    <!-- our story -->
+    <section class="py-20 pb-48">
+      <div class="mx-auto max-w-screen-lg px-10 lg:px-14 xl:max-w-screen-2xl xl:px-24">
+        <h1 style="word-break: break-word;" class="heading-1 text-neutral-900">Our Story</h1>
+        <div
+          class="mt-24 flex w-full flex-col items-center justify-between gap-16 lg:flex-row lg:items-start lg:gap-12 xl:gap-16"
+        >
+          <div
+            class="aspect-[0.95/1] h-auto w-full max-w-[500px] lg:w-[50%] lg:max-w-max 2xl:w-[45%]"
+          >
+            <Image
+              src={Events}
+              width={900}
+              height={40}
+              alt="Brand Productions"
+              class="h-full w-full rounded-3xl bg-neutral-100 object-cover object-center grayscale filter"
+            />
+          </div>
+          <div class="flex max-w-2xl flex-col gap-16 lg:max-w-md lg:gap-20 xl:max-w-2xl">
+            <div>
+              <p
+                style="word-break: break-word;"
+                class="text-balance bg-neutral-100 text-xl font-medium leading-8 text-neutral-700"
+              >
+                Founded in 2016, our agency started as a small team with big dreams. We recognized
+                the need for innovative and effective solutions that could help businesses thrive in
+                a rapidly evolving digital world. With a deep understanding of the power of
+                creativity and technology.
+              </p>
+            </div>
+            <div>
+              <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                <div class="flex flex-col items-start gap-4">
+                  <div class="heading-3">350+</div>
+                  <p class="">Projects completed</p>
+                </div>
+                <div class="flex flex-col items-start gap-4">
+                  <div class="heading-3">200+</div>
+                  <p class="">Happy Clients</p>
+                </div>
+                <div class="flex flex-col items-start gap-4">
+                  <div class="heading-3">32+</div>
+                  <p class="">Team Members</p>
+                </div>
+                <div class="flex flex-col items-start gap-4">
+                  <div class="heading-3">11+</div>
+                  <p class="">Years Of Experiences</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-		gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-		const tl = gsap.timeline({
-			defaults: {
-				opacity: 0,
-				ease: 'power3.inOut',
-				autoAlpha: 0,
-			},
-		});
-		tl.from('#main-heading', {
-			y: 60,
-			duration: 0.5,
-		})
-			.from('#sub-heading', { y: 100, duration: 1 }, '-=0.75')
-			.from('#banner-image', {
-				y: 80,
-				duration: 1,
-				delay: -0.5,
-				ease: 'expo.out',
-			});
+    const tl = gsap.timeline({
+      defaults: {
+        opacity: 0,
+        ease: 'power3.inOut',
+        autoAlpha: 0,
+      },
+    });
+    tl.from('#main-heading', {
+      y: 60,
+      duration: 0.5,
+    })
+      .from('#sub-heading', { y: 100, duration: 1 }, '-=0.75')
+      .from('#banner-image', {
+        y: 80,
+        duration: 1,
+        delay: -0.5,
+        ease: 'expo.out',
+      });
 
-		// tl.scrollTrigger({
+    // tl.scrollTrigger({
 
-		// })
-	</script>
+    // })
+  </script>
 </MainLayout>
