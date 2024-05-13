@@ -78,7 +78,7 @@ const allServices = await getCollection('services');
     <BrandsTicker />
     <!-- Our services -->
     <section class="py-20 pb-24" id="services">
-      <div class="mx-auto max-w-screen-lg px-6 lg:px-14 xl:max-w-screen-2xl xl:px-24">
+      <div class="mx-auto max-w-screen-xl px-6 lg:px-14 xl:max-w-screen-2xl xl:px-24">
         <div class="-mb-4 overflow-clip pb-4">
           <h1 class="heading-1 invisible text-neutral-900">
             <span class="text-brand">Our</span> Services
@@ -89,7 +89,7 @@ const allServices = await getCollection('services');
             <div class="cards">
               {
                 allServices.map((service, index) => (
-                  <div class="card mb-32 flex max-h-[680px] w-full flex-col overflow-hidden rounded-3xl bg-slate-50 lg:mb-56">
+                  <div class="card mb-32 flex w-full flex-col overflow-hidden rounded-3xl bg-slate-50 lg:mb-56">
                     <div class="heading-4 relative flex w-full items-center gap-4 rounded-t-3xl bg-neutral-900 px-4 py-8 text-slate-50 md:px-10">
                       <span>0{index + 1}</span>
                       <span>{service.data.title}</span>
@@ -99,7 +99,7 @@ const allServices = await getCollection('services');
                         <div class="grid-cols-1 lg:col-span-2 lg:row-span-2">
                           <img
                             {...service.data.cover}
-                            class="h-full max-h-48 w-full object-cover md:rounded-3xl lg:max-h-max"
+                            class="h-full max-h-60 w-full object-cover md:rounded-3xl lg:max-h-max"
                           />
                         </div>
                         <div class="hidden lg:row-span-1 lg:block">
@@ -276,19 +276,29 @@ const allServices = await getCollection('services');
       opacity: index === cards.length - 1 ? 1 : 0,
     });
 
-    ScrollTrigger.create({
-      trigger: card,
-      start: `top-=${150} top`,
-      endTrigger: '.cards',
-      end: `bottom top+=${200 + spacer}`,
-      pin: true,
-      pinSpacing: false,
-      // markers: true,
-      id: 'pin',
-      // pinType: 'transform',
-      invalidateOnRefresh: true,
-      // immediateRender: false,
-    });
+    mm.add(
+      {
+        desktop: '(min-width: 1440px)',
+        mobile: '(max-width: 1439px)',
+      },
+      (context) => {
+        const { desktop } = context?.conditions || {};
+        console.log('🚀 ~ cards.forEach ~ desktop:', desktop);
+        ScrollTrigger.create({
+          trigger: card,
+          start: desktop ? `top-=${100} top` : `top-=${68} top`,
+          endTrigger: '.cards',
+          end: `bottom top+=${200 + spacer}`,
+          pin: true,
+          pinSpacing: false,
+          // markers: true,
+          id: 'pin',
+          // pinType: 'transform',
+          invalidateOnRefresh: true,
+          // immediateRender: false,
+        });
+      },
+    );
   });
 
   gsap.from('.and-more > *', {

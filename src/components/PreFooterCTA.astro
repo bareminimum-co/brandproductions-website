@@ -1,10 +1,14 @@
 ---
-
+import { Image } from 'astro:assets';
+import HaveAProject from '~/assets/haveaproject.png';
 ---
 
 <div class="relative mx-auto flex h-min w-full justify-center bg-neutral-100">
   <div class="z-10 w-full max-w-screen-2xl px-8 lg:px-14 xl:px-24">
-    <div class="overflow-clip rounded-4xl bg-white [background-image:var(--gradient-1)]">
+    <div class="relative overflow-clip rounded-4xl bg-black">
+      <div class="absolute inset-0 overflow-clip brightness-[0.4] grayscale filter">
+        <Image src={HaveAProject} alt="Hero image" class="h-full w-full object-cover" />
+      </div>
       <div class="w-full backdrop-brightness-90">
         <div
           class="mx-auto flex max-w-lg flex-col items-center gap-12 py-16 text-center lg:max-w-3xl lg:py-24"
