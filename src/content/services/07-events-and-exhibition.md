@@ -1,7 +1,7 @@
 ---
 title: Events And Exhibition
 description: "Embark on a journey of unforgettable events and immersive exhibitions with Brand Production's expertise in event production and exhibition manufacturing.. "
-cover: "./_images/events.png"
+cover: "./_images/event1.png"
 coverAlt: "The word astro against an illustration of planets and stars."
 image1: "./_images/events1.png"
 image2: "./_images/events2.png"
